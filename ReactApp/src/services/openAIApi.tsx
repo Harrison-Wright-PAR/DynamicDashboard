@@ -7,9 +7,9 @@ export default class Api {
 
     public async generate(input: string) {
         try {
-            const completion = await fetch("/completion", { method: "POST", body: JSON.stringify({ input: input }) });
+            const completion = await fetch("/completion", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ input: input }) });
             console.log(completion);
-            return completion;
+            return completion.json();
         } catch (error: any) {
             console.error(error);
 

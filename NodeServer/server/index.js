@@ -11,33 +11,20 @@ const api = new OpenAI(process.env.OPENAI_API_KEY);
 app.use(bodyParser.json());
 
 app.post('/completion', async (req, res) => {
-    console.log(req,res) 
+    console.log(req.body)
     const completion = await api.chat.completions.create({
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: generatePrompt(req.body.input) }]
+        messages: [{ role: "user", content: req.body.input }]
     });
 
-    res.json({ message: 'Hello World!' });
-
+    res.json(completion);
+ 
 });
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 })
 
-
-function generatePrompt(animal) {
-    const capitalizedAnimal =
-        animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-    return `Suggest three names for an animal that is a superhero.
-
-Animal: Cat
-Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
-Animal: Dog
-Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
-Animal: ${capitalizedAnimal}
-Names:`;
-}
 
 // export default class Api {
 
