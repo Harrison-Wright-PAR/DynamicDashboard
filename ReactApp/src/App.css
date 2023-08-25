@@ -28,10 +28,32 @@
   color: #61dafb;
 }
 
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction:column;
+}
+
+.response-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  white-space: pre-wrap;
+}
+
+.json-view-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

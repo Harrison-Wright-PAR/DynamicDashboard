@@ -18,12 +18,30 @@ app.post('/completion', async (req, res) => {
     });
 
     res.json(completion);
- 
+
+});
+
+app.post('/components', async (req, res) => {
+
+    res.json({ components: [helloUserComponent, salesReportComponent] })
+
 });
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 })
+
+const helloUserComponent = {
+    name: "HelloUser",
+    purpose: "Greet the user",
+    goodFor: "everyone"
+}
+
+const salesReportComponent = {
+    name: "SalesReport",
+    purpose: "Show the user the sales report",
+    goodFor: "sales, marketing, management"
+}
 
 
 // export default class Api {

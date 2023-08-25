@@ -16,6 +16,16 @@ export default class Api {
         }
     }
 
+    public async fetchComponents(userInput: string = "") {
+        try {
+            const components = await fetch("/components", { method: "POST" });
+            console.log(components);
+            return components.json();
+        } catch (error: any) {
+            console.error(error);
+        }
+    }
+
     public generatePrompt(animal: string) {
         const capitalizedAnimal =
             animal[0].toUpperCase() + animal.slice(1).toLowerCase();
