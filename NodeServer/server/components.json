@@ -1,0 +1,12 @@
+[
+    {
+        "name": "HelloUser",
+        "purpose": "greet the user",
+        "goodFor": "all"
+    },
+    {
+        "name": "SalesReport",
+        "purpose": "show the sales report",
+        "goodFor": "sales, management, marketing, store operator, franchisee"
+    }
+]
