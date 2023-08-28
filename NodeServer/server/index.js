@@ -3,7 +3,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
 const bodyParser = require('body-parser');
-const components = require('./components');
+const _components = require('./components');
 
 
 const { OpenAI } = require('langchain/llms/openai');
@@ -46,12 +46,6 @@ app.post('/components', async (req, res) => {
 
     const prompt = PromptTemplate.fromTemplate(prompt1);
 
-    const formattedPrompt = await prompt.format({
-        role: req.body.role,
-        componentsJson: JSON.stringify(components),
-        problemAreas: req.body.problemAreas
-    });
-    console.log(formattedPrompt)
     const chain = new LLMChain({
         llm,
         prompt,
@@ -59,9 +53,11 @@ app.post('/components', async (req, res) => {
 
     const result = await chain.call({
         role: req.body.role,
-        componentsJson: JSON.stringify(components),
+        componentsJson: JSON.stringify(_components),
         problemAreas: req.body.problemAreas
     });
+
+    var formatted = JSON.parse(result['text']);
 
     /*
     todo: establish a prompt chain (? need to look into how it works. basically just a 
@@ -78,7 +74,7 @@ app.post('/components', async (req, res) => {
     we can add caveats and change wording and what not 
     
     */
-    res.json({ result })
+    res.json({ components: formatted })
 
 });
 
