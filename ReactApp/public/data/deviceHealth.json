@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 0,
+    "Name": "Counter: 0",
+    "status": 0
+  },
+  {
+    "Id": 1,
+    "Name": "Counter: 1",
+    "status": 0
+  },
+  {
+    "Id": 2,
+    "Name": "Counter: 2",
+    "status": 0
+  },
+  {
+    "Id": 3,
+    "Name": "Counter: 3",
+    "status": 1
+  },
+  {
+    "Id": 4,
+    "Name": "Counter: 4",
+    "status": 1
+  },
+  {
+    "Id": 5,
+    "Name": "Counter: 5",
+    "status": 0
+  },
+  {
+    "Id": 6,
+    "Name": "Counter: 6",
+    "status": 0
+  },
+  {
+    "Id": 7,
+    "Name": "Counter: 7",
+    "status": 0
+  },
+  {
+    "Id": 8,
+    "Name": "Counter: 8",
+    "status": 0
+  },
+  {
+    "Id": 9,
+    "Name": "Counter: 9",
+    "status": 1
+  }
+]

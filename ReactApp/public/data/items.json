@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 0,
+    "Name": "Ice Cream",
+    "Cost": 19.83
+  },
+  {
+    "Id": 1,
+    "Name": "Chicken Tenders",
+    "Cost": 18.70
+  },
+  {
+    "Id": 2,
+    "Name": "Chicken Tenders",
+    "Cost": 1.33
+  },
+  {
+    "Id": 3,
+    "Name": "Fries",
+    "Cost": 13.14
+  },
+  {
+    "Id": 4,
+    "Name": "Chicken Tenders",
+    "Cost": 19.80
+  },
+  {
+    "Id": 5,
+    "Name": "Fries",
+    "Cost": 10.40
+  },
+  {
+    "Id": 6,
+    "Name": "Coffee - Hot",
+    "Cost": 13.78
+  },
+  {
+    "Id": 7,
+    "Name": "Fries",
+    "Cost": 15.65
+  },
+  {
+    "Id": 8,
+    "Name": "Tator Tots",
+    "Cost": 14.75
+  },
+  {
+    "Id": 9,
+    "Name": "Tator Tots",
+    "Cost": 6.32
+  }
+]
