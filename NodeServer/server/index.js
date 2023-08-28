@@ -45,12 +45,12 @@ Please respond with JSON that includes only elements from the list I provided yo
 Please avoid very similar components (i.e. sales with labor costs and sales without labor costs).`
 
 const setupPrompt = `Hey There! We're working on setting up some dashboards for restuarant back-of-house users.
-Given this list of components {componentsExample}, here are some sample dashboards for different users {dashboardsExample}.
+Given this list of components {componentsAll}, here are some sample dashboards for different users {dashboardsExample}.
  I'm going to ask you something soon, could you provide some key takeaways for yourself that might help later?`
 
 const actionPrompt = `
 Given these components and sample dashboards, I'm a {role} and my areas of concern are mostly {problemAreas}. Could you suggest a dashboard that would fit my needs best?
-Please respond with JSON using only the components I've provided here - {componentsExample}. Try to avoid very similar or duplicate components (i.e. sales with labor costs and sales without labor costs).
+Please respond with JSON (ie. components: jsonArray) using only the components I've provided here - {componentsAll}. Try to avoid very similar or duplicate components (i.e. sales with labor costs and sales without labor costs).
 `
 app.post('/components', async (req, res) => {
     const memory = new BufferMemory();
@@ -61,26 +61,26 @@ app.post('/components', async (req, res) => {
     const setupChain = new LLMChain({
         llm,
         prompt: setupPromptTemplate,
-        inputVariables: ["componentsExample", "dashboardsExample"],
+        inputVariables: ["componentsAll", "dashboardsExample"],
         outputKey: "setupResult"
     });
 
     const actionChain = new LLMChain({
         llm,
         prompt: actionPromptTemplate,
-        inputVariables: ["role", "problemAreas", "setupResult", "componentsExample"],
+        inputVariables: ["role", "problemAreas", "setupResult", "componentsAll"],
         outputKey: "components"
     });
 
     const overallChain = new SequentialChain({
         chains: [setupChain, actionChain],
-        inputVariables: ["componentsExample", "dashboardsExample", "role", "problemAreas"],
+        inputVariables: ["componentsAll", "dashboardsExample", "role", "problemAreas"],
         verbose: true,
         outputVariables: ["components"]
     });
 
     const inputValues = {
-        componentsExample: JSON.stringify(_components),
+        componentsAll: JSON.stringify(_components),
         dashboardsExample: JSON.stringify(_dashboards),
         role: req.body.role,
         problemAreas: req.body.problemAreas,
@@ -88,7 +88,13 @@ app.post('/components', async (req, res) => {
 
     const result = await overallChain.call(inputValues);
 
-    res.send({ components: JSON.parse(result['components']) });
+    let parse = JSON.parse(result['components'])
+
+    if(parse['components']){
+        parse = parse['components']
+    }
+
+    res.send({ components: parse });
 
 });
 app.listen(PORT, () => {
