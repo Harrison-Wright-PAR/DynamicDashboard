@@ -31,7 +31,7 @@ var menuChanges = new Faker<MenuChange>()
     .StrictMode(true)
     .RuleFor(m => m.Id, f => f.IndexFaker)
     .RuleFor(m => m.Name, f => f.PickRandom(changeNames))
-    .RuleFor(m => m.Date, f => f.Date.Past(60));
+    .RuleFor(m => m.Date, f => f.Date.Recent(60));
 var menuChangeData = menuChanges.Generate(25);
 var menuChangeJson = JsonSerializer.Serialize(menuChangeData, new JsonSerializerOptions { WriteIndented = true });
 File.WriteAllText("data/menuChanges.json", menuChangeJson);
@@ -44,7 +44,7 @@ var orderItem = new Faker<OrderItem>()
 var order = new Faker<Order>()
     .StrictMode(true)
     .RuleFor(o => o.Id, f => f.IndexFaker)
-    .RuleFor(o => o.Date, f => f.Date.Past(60))
+    .RuleFor(o => o.Date, f => f.Date.Recent(60))
     .RuleFor(o => o.Items, f => orderItem.GenerateBetween(1, 5))
     .RuleFor(o => o.Cost, (f, o) => Math.Round(o.Items.Sum(i => itemData.First(id => id.Id == i.ItemId).Cost * i.Quantity), 2))
     .RuleFor(o => o.Tax, (f, o) => Math.Round(o.Cost * 0.06m, 2))
@@ -82,7 +82,7 @@ var customerFeedbackId = 0;
 var customerFeedback = new Faker<CustomerFeedback>()
     .RuleFor(c => c.Id, f => customerFeedbackId++)
     .RuleFor(c => c.CustomerName, f => f.Name.FullName())
-    .RuleFor(c => c.Date, f => f.Date.Past(60))
+    .RuleFor(c => c.Date, f => f.Date.Recent(60))
     .RuleFor(c => c.Rating, f => f.Random.Number(1, 5))
     .RuleFor(c => c.Feedback, f => f.Rant.Review("Cheeseburger"));
 
@@ -92,7 +92,7 @@ File.WriteAllText("data/customerFeedback.json", customerFeedbackJson);
 DataOutputter.WriteConsole("customer feedback", customerFeedbackData.Count, customerFeedbackJson);
 
 var laborIrregularities = new Faker<LaborIrregularity>()
-    .RuleFor(l => l.Date, f => f.Date.Past(60))
+    .RuleFor(l => l.Date, f => f.Date.Recent(60))
     .RuleFor(l => l.LastEvent, f => f.Lorem.Sentence(5))
     .RuleFor(l => l.Name, f => f.Name.FullName());
 
