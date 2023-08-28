@@ -5,24 +5,63 @@ const app = express();
 const bodyParser = require('body-parser');
 const components = require('./components');
 
-const OpenAI = require('openAI').OpenAI;
 
-const api = new OpenAI(process.env.OPENAI_API_KEY);
+const { OpenAI } = require('langchain/llms/openai');
+const { ChatOpenAI } = require('langchain/chat_models/openai');
+const { LLMChain } = require('langchain/chains');
+const { PromptTemplate } = require('langchain/prompts');
+
+const llm = new OpenAI({
+    openAIApiKey: process.env.OPENAI_API_KEY,
+})
+
+const chat = new ChatOpenAI({
+    temperature: 0.5
+});
+// const OpenAI = require('openAI').OpenAI;
+
+// const api = new OpenAI(process.env.OPENAI_API_KEY);
+
 
 app.use(bodyParser.json());
 
 app.post('/completion', async (req, res) => {
-    console.log(req.body)
-    const completion = await api.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: req.body.input }]
-    });
+    // console.log(req.body)
+    // const completion = await api.chat.completions.create({
+    //     model: "gpt-3.5-turbo",
+    //     messages: [{ role: "user", content: req.body.input }]
+    // });
+    const completion = await llm.predict(req.body.input);
 
     res.json(completion);
 
 });
 
+const prompt1 = `Hey there! I work for a restaurant chain as a {role} and my biggest day-to-day concerns involve {problemAreas}.
+ Given this list of components {componentsJson}, which would you suggest for me to place on my dashboard? 
+Please respond with JSON that includes only elements from the list I provided you previously. 
+Please avoid very similar components (i.e. sales with labor costs and sales without labor costs).`
+
 app.post('/components', async (req, res) => {
+
+    const prompt = PromptTemplate.fromTemplate(prompt1);
+
+    const formattedPrompt = await prompt.format({
+        role: req.body.role,
+        componentsJson: JSON.stringify(components),
+        problemAreas: req.body.problemAreas
+    });
+    console.log(formattedPrompt)
+    const chain = new LLMChain({
+        llm,
+        prompt,
+    });
+
+    const result = await chain.call({
+        role: req.body.role,
+        componentsJson: JSON.stringify(components),
+        problemAreas: req.body.problemAreas
+    });
 
     /*
     todo: establish a prompt chain (? need to look into how it works. basically just a 
@@ -39,7 +78,7 @@ app.post('/components', async (req, res) => {
     we can add caveats and change wording and what not 
     
     */
-    res.json({ components: components })
+    res.json({ result })
 
 });
 

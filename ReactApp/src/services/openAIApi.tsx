@@ -33,7 +33,7 @@ export default class Api {
             we can add caveats and change wording and what not 
             
             */
-            const components = await fetch("/components", { method: "POST" });
+            const components = await fetch("/components", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ role: 'manager', problemAreas: 'sales, labor' }) });
             console.log(components);
             return components.json();
         } catch (error: any) {
