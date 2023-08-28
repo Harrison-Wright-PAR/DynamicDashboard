@@ -8,5 +8,40 @@
         "name": "SalesReport",
         "purpose": "show the sales report",
         "goodFor": "sales, management, marketing, store operator, franchisee"
+    },
+    {
+        "name": "InventoryReport",
+        "purpose": "show the inventory report",
+        "goodFor": "management, store operator, franchisee"
+    },
+    {
+        "name": "LaborCostAnalysis",
+        "purpose": "show the labor cost analysis",
+        "goodFor": "franchise owner, management"
+    },
+    {
+        "name": "MenuChanges",
+        "purpose": "show the menu changes",
+        "goodFor": "support, franchise owner, management"
+    },
+    {
+        "name": "SalesSummaryTotal",
+        "purpose": "show the sales summary for multiple locations along with some near-run trends",
+        "goodFor": "management, franchise owner, franchisee"
+    },
+    {
+        "name": "SalesTrend",
+        "purpose": "show the sales trend for a single location",
+        "goodFor": "management, franchise owner, franchisee"
+    },
+    {
+        "name": "SalesTotalMultipleBrands",
+        "purpose": "show the sales summary for multiple brands",
+        "goodFor": "franchise owner"
+    },
+    {
+        "name": "DeviceHealth",
+        "purpose": "show the health of devices on a stack",
+        "goodFor": "support, admin"
     }
 ]

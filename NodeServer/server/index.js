@@ -4,12 +4,13 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const bodyParser = require('body-parser');
 const _components = require('./components');
-
+const _dashboards = require('./dashboards');
 
 const { OpenAI } = require('langchain/llms/openai');
 const { ChatOpenAI } = require('langchain/chat_models/openai');
-const { LLMChain } = require('langchain/chains');
+const { LLMChain, SimpleSequentialChain } = require('langchain/chains');
 const { PromptTemplate } = require('langchain/prompts');
+const { BufferMemory } = require('langchain/memory');
 
 const llm = new OpenAI({
     openAIApiKey: process.env.OPENAI_API_KEY,
@@ -42,22 +43,63 @@ const prompt1 = `Hey there! I work for a restaurant chain as a {role} and my big
 Please respond with JSON that includes only elements from the list I provided you previously. 
 Please avoid very similar components (i.e. sales with labor costs and sales without labor costs).`
 
+const setupPrompt = `Hey There! We're working on setting up some dashboards for restuarant back-of-house users.
+Given this list of components {_components}, here are some sample dashboards for different users {_dashboards}. I'm going to ask you something soon`
+
+const actionPrompt = `
+Given these components and sample dashboards, I'm a {role} and my areas of concern are mostly {problemAreas}. Could you suggest a dashboard that would fit my needs best?
+Please respond with JSON using only the components I've provided in the original list. Try to avoid very similar or duplicate components (i.e. sales with labor costs and sales without labor costs).
+`
+
 app.post('/components', async (req, res) => {
+    const memory = new BufferMemory();
+    // const prompt = PromptTemplate.fromTemplate(prompt1);
 
-    const prompt = PromptTemplate.fromTemplate(prompt1);
-
-    const chain = new LLMChain({
-        llm,
-        prompt,
+    var setupPromptTemplate = new PromptTemplate({
+        prompt: setupPrompt,
+        inputVariables: ["components", "dashboards"]
     });
 
-    const result = await chain.call({
+    const setupChain = new LLMChain({
+        llm,
+        prompt: setupPromptTemplate,
+    });
+
+    const actionPromptTemplate = new PromptTemplate({
+        prompt: actionPrompt,
+        inputVariables: ["role", "problemAreas"]
+    });
+
+    const actionChain = new LLMChain({
+        llm,
+        prompt: actionPromptTemplate,
+    });
+
+    const overallChain = new SimpleSequentialChain({
+        chains: [setupChain, actionChain],
+        verbose: true,
+        memory
+    });
+
+    var res = overallChain.call({
+        _components,
+        _dashboards,
         role: req.body.role,
-        componentsJson: JSON.stringify(_components),
         problemAreas: req.body.problemAreas
     });
+    // const chain = new LLMChain({
+    //     llm,
+    //     prompt,
+    //     memory
+    // });
 
-    var formatted = JSON.parse(result['text']);
+    // const result = await chain.call({
+    //     role: req.body.role,
+    //     componentsJson: JSON.stringify(_components),
+    //     problemAreas: req.body.problemAreas
+    // });
+
+    // var formatted = JSON.parse(result['text']);
 
     /*
     todo: establish a prompt chain (? need to look into how it works. basically just a 
