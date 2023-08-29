@@ -5,6 +5,7 @@ import { JsonView, allExpanded, darkStyles } from 'react-json-view-lite';
 import 'react-json-view-lite/dist/index.css';
 import HelloUser from './components/helloUser';
 import SalesReport from './components/salesReport';
+import SalesTrendReport from './components/salesTrendReport';
 
 type ComponentMap = {
   [key: string]: React.ComponentType<any>;
@@ -13,6 +14,7 @@ type ComponentMap = {
 const componentMap: ComponentMap = {
   HelloUser: HelloUser,
   SalesReport: SalesReport,
+  SalesTrendReport: SalesTrendReport
 }
 
 function App() {
