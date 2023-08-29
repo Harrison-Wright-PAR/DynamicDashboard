@@ -30,7 +30,7 @@
         "goodFor": "management, franchise owner, franchisee"
     },
     {
-        "name": "SalesTrend",
+        "name": "SalesTrendReport",
         "purpose": "show the sales trend for a single location",
         "goodFor": "management, franchise owner, franchisee"
     },
