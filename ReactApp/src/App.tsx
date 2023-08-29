@@ -19,22 +19,36 @@ function App() {
   const [inputValue, setInputValue] = useState('');
   const [apiResponse, setApiResponse] = useState('');
   const [components, setComponents] = useState([]);
+  const [dashboard, setDashboard] = useState('');
+  const [userRequest, setUserRequest] = useState('');
+  const api = new Api();
 
   const handleButtonClick = async () => {
-    const api = new Api();
     setApiResponse("Calling API...");
     const response = await api.generate(inputValue);
     setApiResponse(response);
   };
 
   const fetchComponents = async () => {
-    const api = new Api();
     setApiResponse("Calling API...");
     const response = await api.fetchComponents();
     console.log(response);
     setComponents(response['components']);
+    setDashboard(response['components']);
     setApiResponse(response);
   };
+
+  const updateDashboard = async () => {
+    var res = await api.updateDashboard(dashboard, userRequest)
+    console.log(res);
+    
+    if (res['components']) {
+      setComponents(res['components']);
+    }
+
+    setApiResponse(res);
+  };
+
 
   return (
     <div className="center-box">
@@ -60,6 +74,10 @@ function App() {
             }
           })
         )}
+      </div>
+      <div>
+        <button onClick={() => updateDashboard()}>Update Dashboard</button>
+        <input type="text" placeholder="Any requests for updates?" value={userRequest} onChange={(e) => setUserRequest(e.target.value)} />
       </div>
     </div>
   );
