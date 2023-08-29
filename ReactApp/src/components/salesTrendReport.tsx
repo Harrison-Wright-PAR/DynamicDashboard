@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LineChart } from '@mui/x-charts/LineChart';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 export default function SalesTrendReport() {
     const [data, setData] = useState([]);
@@ -8,7 +8,7 @@ export default function SalesTrendReport() {
 
     useEffect(() => {
         // Fetch the local JSON file
-        fetch('./data/orders.json')
+        fetch('./data/salesTrend.json')
             .then((response) => {
                 console.log(response);
                 if (!response.ok) {
@@ -17,6 +17,7 @@ export default function SalesTrendReport() {
                 return response.json();
             })
             .then((data) => {
+                data.sort((a: any, b: any) => new Date(a.Date).getTime() - new Date(b.Date).getTime());
                 setData(data);
                 setLoading(false);
             })
@@ -31,12 +32,25 @@ export default function SalesTrendReport() {
 
   return (
     <div>
-      <h1>Sales Trend Report</h1>
-      <LineChart
-        xAxis={[{ dataKey: 'Date', scaleType: 'time', valueFormatter: (date: Date) => date.toLocaleDateString()}]}
-        series={[{ dataKey: 'Total'}]}
-        dataset={data}
-      />
+      <h1>Sales Trend - Past 90 Days</h1>
+        <LineChart
+          width={800}
+          height={500}
+          data={data}
+          margin={{
+            top: 5,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="Date" tickFormatter = {t => new Date(t).toLocaleDateString()}/>
+          <YAxis yAxisId="left" />
+          <YAxis yAxisId="right" orientation="right" />
+          <Tooltip labelFormatter={t => new Date(t).toLocaleDateString()}/>
+          <Legend />
+          <Line yAxisId="left" type="monotone" dataKey="SalesTotal" stroke="#8884d8" activeDot={{ r: 8 }} label="Sales" />
+          <Line  yAxisId="right" type="monotone" dataKey="LaborHours" stroke="#82ca9d" label="Labor" />
+        </LineChart>
     </div>
   );
 }

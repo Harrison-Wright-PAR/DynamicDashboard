@@ -58,7 +58,7 @@ DataOutputter.WriteConsole("order", orderData.Count, orderJson);
 var laborDayOffset = 0;
 var laborDate = DateTime.Now.Date;
 var laborCost = new Faker<LaborCost>()
-    .RuleFor(l => l.Offset, f => laborDayOffset++)
+    .RuleFor(l => l.Offset, f => laborDayOffset)
     .RuleFor(l => l.Hours, f => Math.Round(f.Random.GaussianDecimal(80d, 20d), 2))
     .RuleFor(l => l.Date, f => laborDate.AddDays(-(laborDayOffset++)));
 
@@ -100,3 +100,15 @@ var laborIrregularityData = laborIrregularities.Generate(20);
 var laborIrregularityJson = JsonSerializer.Serialize(laborIrregularityData, new JsonSerializerOptions { WriteIndented = true });
 File.WriteAllText("data/laborIrregularity.json", laborIrregularityJson);
 DataOutputter.WriteConsole("labor irregularity", laborIrregularityData.Count, laborIrregularityJson);
+
+var salesTrendsDayOffset = 0;
+var salesTrendsDate = DateTime.Now.Date;
+var salesTrends = new Faker<SalesTrend>()
+        .RuleFor(l => l.Offset, f => salesTrendsDayOffset)
+        .RuleFor(l => l.Date, f => salesTrendsDate.AddDays(-(salesTrendsDayOffset++)))
+        .RuleFor(l => l.SalesTotal, s => s.Finance.Amount(1000, 5000))
+        .RuleFor(l => l.LaborHours, f => Math.Round(f.Random.GaussianDecimal(80d, 20d), 2));
+var salesTrendData = salesTrends.Generate(90);
+var salesTrendJson = JsonSerializer.Serialize(salesTrendData, new JsonSerializerOptions { WriteIndented = true });
+File.WriteAllText("data/salesTrend.json", salesTrendJson);
+DataOutputter.WriteConsole("sales trend", salesTrendData.Count, salesTrendJson);
