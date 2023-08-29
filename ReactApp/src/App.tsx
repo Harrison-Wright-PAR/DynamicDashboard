@@ -102,8 +102,8 @@ function App() {
     <Container maxWidth="sm">
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Box sx={{ mt: 3 }}>
-          <TextField label="Input Value" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-          <Button variant="contained" onClick={handleButtonClick}>Call API</Button>
+          <TextField sx={{ width: '400px'  }} rows={3} label="Input Value" value={inputValue} multiline={true} onChange={(e) => setInputValue(e.target.value)} />
+          <Button variant="contained" sx={{ margin: '10px'}}  onClick={handleButtonClick}>Call API</Button>
         </Box>
         {apiResponse && (
           <Box sx={{ mt: 3 }}>
@@ -111,8 +111,8 @@ function App() {
           </Box>
         )}
         <Box sx={{ mt: 3 }}>
-          <Button variant="contained" onClick={() => fetchComponents()}>Fetch Components - AI</Button>
-          <Button variant="contained" onClick={() => fetchComponentsLocal()}>Fetch Components - Local</Button>
+          <Button sx={{ margin: '5px'}} variant="contained" onClick={() => fetchComponents()}>Fetch Components - AI</Button>
+          <Button sx={{ margin: '5px'}} variant="contained" onClick={() => fetchComponentsLocal()}>Fetch Components - Local</Button>
 
           <ResponsiveGridLayout
             className="layout"
@@ -139,7 +139,7 @@ function App() {
           </ResponsiveGridLayout>
         </Box>
         <Box sx={{ mt: 3 }}>
-          <Button variant="contained" onClick={() => updateDashboard()}>Update Dashboard</Button>
+          <Button variant="contained" sx={{ margin: '10px'}} onClick={() => updateDashboard()}>Update Dashboard</Button>
           <TextField label="Any requests for updates?" value={userRequest} onChange={(e) => setUserRequest(e.target.value)} />
         </Box>
       </Box>
