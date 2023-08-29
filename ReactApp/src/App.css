@@ -60,3 +60,11 @@
     transform: rotate(360deg);
   }
 }
+
+.Offline {
+  color: red
+}
+
+.Online {
+  color: green
+}

@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import TotalSales from './widgets/TotalSales';
+import DeviceHealth from './widgets/DeviceHealth';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -23,7 +24,7 @@ export default function Examples() {
           <Item><TotalSales/></Item>
         </Grid>
         <Grid item xs={6}>
-          <Item>2</Item>
+          <Item><DeviceHealth></DeviceHealth></Item>
         </Grid>
         <Grid item xs={6}>
           <Item>3</Item>
