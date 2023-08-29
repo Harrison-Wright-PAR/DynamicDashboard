@@ -1,0 +1,2122 @@
+[
+  {
+    "Id": 0,
+    "Date": "2023-07-25T22:48:07.2260081-04:00",
+    "Cost": 169.41,
+    "Tax": 10.16,
+    "Total": 179.57,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 1,
+    "Date": "2023-07-26T07:56:14.5272522-04:00",
+    "Cost": 105.12,
+    "Tax": 6.31,
+    "Total": 111.43,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Date": "2023-07-03T12:39:24.360758-04:00",
+    "Cost": 166.62,
+    "Tax": 10.00,
+    "Total": 176.62,
+    "Items": [
+      {
+        "ItemId": 0,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 6
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Date": "2023-08-28T12:46:44.0215428-04:00",
+    "Cost": 384.01,
+    "Tax": 23.04,
+    "Total": 407.05,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Date": "2023-07-11T12:26:59.4910966-04:00",
+    "Cost": 418.66,
+    "Tax": 25.12,
+    "Total": 443.78,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 6
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Date": "2023-07-27T14:04:15.022841-04:00",
+    "Cost": 9.31,
+    "Tax": 0.56,
+    "Total": 9.87,
+    "Items": [
+      {
+        "ItemId": 2,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "Date": "2023-08-24T02:46:54.3228825-04:00",
+    "Cost": 234.00,
+    "Tax": 14.04,
+    "Total": 248.04,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "Date": "2023-07-20T09:35:51.2232008-04:00",
+    "Cost": 175.15,
+    "Tax": 10.51,
+    "Total": 185.66,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "Date": "2023-07-23T11:36:21.4571329-04:00",
+    "Cost": 217.26,
+    "Tax": 13.04,
+    "Total": 230.30,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 1
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "Date": "2023-07-24T08:26:49.9192527-04:00",
+    "Cost": 124.50,
+    "Tax": 7.47,
+    "Total": 131.97,
+    "Items": [
+      {
+        "ItemId": 5,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 6
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "Date": "2023-08-16T10:14:38.1746183-04:00",
+    "Cost": 140.85,
+    "Tax": 8.45,
+    "Total": 149.30,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 11,
+    "Date": "2023-08-07T14:19:18.4282529-04:00",
+    "Cost": 378.95,
+    "Tax": 22.74,
+    "Total": 401.69,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 12,
+    "Date": "2023-06-30T23:10:54.5677212-04:00",
+    "Cost": 258.03,
+    "Tax": 15.48,
+    "Total": 273.51,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 13,
+    "Date": "2023-07-25T07:14:41.1554979-04:00",
+    "Cost": 116.65,
+    "Tax": 7.00,
+    "Total": 123.65,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 14,
+    "Date": "2023-08-13T03:09:40.2642801-04:00",
+    "Cost": 389.64,
+    "Tax": 23.38,
+    "Total": 413.02,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 15,
+    "Date": "2023-07-26T08:27:34.3529866-04:00",
+    "Cost": 99.15,
+    "Tax": 5.95,
+    "Total": 105.10,
+    "Items": [
+      {
+        "ItemId": 0,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 16,
+    "Date": "2023-07-20T07:37:30.1343991-04:00",
+    "Cost": 409.00,
+    "Tax": 24.54,
+    "Total": 433.54,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 17,
+    "Date": "2023-07-15T08:31:06.6422026-04:00",
+    "Cost": 230.76,
+    "Tax": 13.85,
+    "Total": 244.61,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 18,
+    "Date": "2023-08-14T15:24:24.1625105-04:00",
+    "Cost": 486.22,
+    "Tax": 29.17,
+    "Total": 515.39,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 19,
+    "Date": "2023-07-28T17:41:22.0201408-04:00",
+    "Cost": 128.16,
+    "Tax": 7.69,
+    "Total": 135.85,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 20,
+    "Date": "2023-07-09T02:30:16.3304267-04:00",
+    "Cost": 1.33,
+    "Tax": 0.08,
+    "Total": 1.41,
+    "Items": [
+      {
+        "ItemId": 2,
+        "Quantity": 1
+      }
+    ]
+  },
+  {
+    "Id": 21,
+    "Date": "2023-08-07T13:33:43.9349665-04:00",
+    "Cost": 178.20,
+    "Tax": 10.69,
+    "Total": 188.89,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 22,
+    "Date": "2023-08-15T17:01:55.1286972-04:00",
+    "Cost": 354.44,
+    "Tax": 21.27,
+    "Total": 375.71,
+    "Items": [
+      {
+        "ItemId": 0,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "Id": 23,
+    "Date": "2023-08-09T03:13:59.3104924-04:00",
+    "Cost": 262.17,
+    "Tax": 15.73,
+    "Total": 277.90,
+    "Items": [
+      {
+        "ItemId": 5,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 24,
+    "Date": "2023-08-03T11:23:28.6930302-04:00",
+    "Cost": 102.15,
+    "Tax": 6.13,
+    "Total": 108.28,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 4
+      }
+    ]
+  },
+  {
+    "Id": 25,
+    "Date": "2023-07-25T17:02:29.6691325-04:00",
+    "Cost": 59.40,
+    "Tax": 3.56,
+    "Total": 62.96,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "Id": 26,
+    "Date": "2023-08-09T04:56:51.0887332-04:00",
+    "Cost": 178.74,
+    "Tax": 10.72,
+    "Total": 189.46,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 27,
+    "Date": "2023-07-06T17:37:03.1116471-04:00",
+    "Cost": 234.90,
+    "Tax": 14.09,
+    "Total": 248.99,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "Id": 28,
+    "Date": "2023-08-16T10:33:35.7738094-04:00",
+    "Cost": 332.01,
+    "Tax": 19.92,
+    "Total": 351.93,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 29,
+    "Date": "2023-07-17T17:01:19.3012305-04:00",
+    "Cost": 374.15,
+    "Tax": 22.45,
+    "Total": 396.60,
+    "Items": [
+      {
+        "ItemId": 6,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "Id": 30,
+    "Date": "2023-08-01T03:21:15.7883706-04:00",
+    "Cost": 124.02,
+    "Tax": 7.44,
+    "Total": 131.46,
+    "Items": [
+      {
+        "ItemId": 6,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 31,
+    "Date": "2023-07-12T18:34:45.2686175-04:00",
+    "Cost": 241.07,
+    "Tax": 14.46,
+    "Total": 255.53,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 32,
+    "Date": "2023-07-19T09:28:17.3889535-04:00",
+    "Cost": 201.20,
+    "Tax": 12.07,
+    "Total": 213.27,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 33,
+    "Date": "2023-08-19T00:09:46.7086236-04:00",
+    "Cost": 110.05,
+    "Tax": 6.60,
+    "Total": 116.65,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "Id": 34,
+    "Date": "2023-08-08T10:58:56.5789327-04:00",
+    "Cost": 290.82,
+    "Tax": 17.45,
+    "Total": 308.27,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 35,
+    "Date": "2023-07-14T04:02:27.7752167-04:00",
+    "Cost": 88.50,
+    "Tax": 5.31,
+    "Total": 93.81,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 6
+      }
+    ]
+  },
+  {
+    "Id": 36,
+    "Date": "2023-07-25T22:18:47.2415513-04:00",
+    "Cost": 164.35,
+    "Tax": 9.86,
+    "Total": 174.21,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 37,
+    "Date": "2023-08-11T20:09:22.2481009-04:00",
+    "Cost": 52.00,
+    "Tax": 3.12,
+    "Total": 55.12,
+    "Items": [
+      {
+        "ItemId": 5,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 38,
+    "Date": "2023-08-16T06:20:07.5593913-04:00",
+    "Cost": 352.44,
+    "Tax": 21.15,
+    "Total": 373.59,
+    "Items": [
+      {
+        "ItemId": 0,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 39,
+    "Date": "2023-07-10T02:25:20.9256351-04:00",
+    "Cost": 328.62,
+    "Tax": 19.72,
+    "Total": 348.34,
+    "Items": [
+      {
+        "ItemId": 5,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 40,
+    "Date": "2023-08-03T11:05:48.8122757-04:00",
+    "Cost": 506.74,
+    "Tax": 30.40,
+    "Total": 537.14,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 41,
+    "Date": "2023-08-25T03:26:47.3646339-04:00",
+    "Cost": 98.06,
+    "Tax": 5.88,
+    "Total": 103.94,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 4
+      }
+    ]
+  },
+  {
+    "Id": 42,
+    "Date": "2023-08-27T09:46:53.0122613-04:00",
+    "Cost": 389.75,
+    "Tax": 23.38,
+    "Total": 413.13,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "Id": 43,
+    "Date": "2023-07-22T04:09:10.8776186-04:00",
+    "Cost": 168.55,
+    "Tax": 10.11,
+    "Total": 178.66,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 44,
+    "Date": "2023-08-27T12:25:27.7222787-04:00",
+    "Cost": 563.41,
+    "Tax": 33.80,
+    "Total": 597.21,
+    "Items": [
+      {
+        "ItemId": 2,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 45,
+    "Date": "2023-07-10T18:00:51.3297356-04:00",
+    "Cost": 115.62,
+    "Tax": 6.94,
+    "Total": 122.56,
+    "Items": [
+      {
+        "ItemId": 2,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 46,
+    "Date": "2023-08-03T13:56:58.5526122-04:00",
+    "Cost": 291.50,
+    "Tax": 17.49,
+    "Total": 308.99,
+    "Items": [
+      {
+        "ItemId": 5,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 47,
+    "Date": "2023-08-13T20:46:28.6760538-04:00",
+    "Cost": 377.80,
+    "Tax": 22.67,
+    "Total": 400.47,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 1
+      }
+    ]
+  },
+  {
+    "Id": 48,
+    "Date": "2023-07-06T20:55:26.5619337-04:00",
+    "Cost": 244.64,
+    "Tax": 14.68,
+    "Total": 259.32,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 49,
+    "Date": "2023-07-14T04:13:26.3498421-04:00",
+    "Cost": 132.73,
+    "Tax": 7.96,
+    "Total": 140.69,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 1
+      }
+    ]
+  },
+  {
+    "Id": 50,
+    "Date": "2023-08-06T23:54:14.152237-04:00",
+    "Cost": 402.44,
+    "Tax": 24.15,
+    "Total": 426.59,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 51,
+    "Date": "2023-08-28T01:04:20.2261086-04:00",
+    "Cost": 152.11,
+    "Tax": 9.13,
+    "Total": 161.24,
+    "Items": [
+      {
+        "ItemId": 0,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 52,
+    "Date": "2023-07-07T02:43:53.1715467-04:00",
+    "Cost": 272.77,
+    "Tax": 16.37,
+    "Total": 289.14,
+    "Items": [
+      {
+        "ItemId": 6,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 53,
+    "Date": "2023-06-29T18:57:47.6522912-04:00",
+    "Cost": 283.65,
+    "Tax": 17.02,
+    "Total": 300.67,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 54,
+    "Date": "2023-07-01T02:16:20.0741838-04:00",
+    "Cost": 12.64,
+    "Tax": 0.76,
+    "Total": 13.40,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 55,
+    "Date": "2023-07-09T23:35:40.9446895-04:00",
+    "Cost": 310.11,
+    "Tax": 18.61,
+    "Total": 328.72,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 6
+      }
+    ]
+  },
+  {
+    "Id": 56,
+    "Date": "2023-08-05T18:41:45.9331551-04:00",
+    "Cost": 235.99,
+    "Tax": 14.16,
+    "Total": 250.15,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 57,
+    "Date": "2023-08-10T07:03:35.5132001-04:00",
+    "Cost": 212.87,
+    "Tax": 12.77,
+    "Total": 225.64,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 58,
+    "Date": "2023-08-05T01:41:39.4986728-04:00",
+    "Cost": 355.05,
+    "Tax": 21.30,
+    "Total": 376.35,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "Id": 59,
+    "Date": "2023-07-14T12:27:00.499451-04:00",
+    "Cost": 318.82,
+    "Tax": 19.13,
+    "Total": 337.95,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 60,
+    "Date": "2023-08-17T04:12:48.916239-04:00",
+    "Cost": 141.54,
+    "Tax": 8.49,
+    "Total": 150.03,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 61,
+    "Date": "2023-08-01T13:48:17.4335389-04:00",
+    "Cost": 375.37,
+    "Tax": 22.52,
+    "Total": 397.89,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 62,
+    "Date": "2023-08-03T00:49:34.3598909-04:00",
+    "Cost": 425.38,
+    "Tax": 25.52,
+    "Total": 450.90,
+    "Items": [
+      {
+        "ItemId": 0,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 63,
+    "Date": "2023-07-30T05:03:34.1793918-04:00",
+    "Cost": 304.75,
+    "Tax": 18.28,
+    "Total": 323.03,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 64,
+    "Date": "2023-08-17T23:56:39.987855-04:00",
+    "Cost": 436.68,
+    "Tax": 26.20,
+    "Total": 462.88,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "Id": 65,
+    "Date": "2023-07-16T18:28:07.9613539-04:00",
+    "Cost": 210.10,
+    "Tax": 12.61,
+    "Total": 222.71,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 4
+      }
+    ]
+  },
+  {
+    "Id": 66,
+    "Date": "2023-08-16T20:43:17.4511928-04:00",
+    "Cost": 338.95,
+    "Tax": 20.34,
+    "Total": 359.29,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 67,
+    "Date": "2023-07-13T06:02:38.1432456-04:00",
+    "Cost": 216.72,
+    "Tax": 13.00,
+    "Total": 229.72,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 68,
+    "Date": "2023-08-08T17:37:20.043837-04:00",
+    "Cost": 290.93,
+    "Tax": 17.46,
+    "Total": 308.39,
+    "Items": [
+      {
+        "ItemId": 5,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 9
+      }
+    ]
+  },
+  {
+    "Id": 69,
+    "Date": "2023-07-19T19:22:50.5667373-04:00",
+    "Cost": 334.71,
+    "Tax": 20.08,
+    "Total": 354.79,
+    "Items": [
+      {
+        "ItemId": 2,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 70,
+    "Date": "2023-08-25T08:14:53.0162908-04:00",
+    "Cost": 227.06,
+    "Tax": 13.62,
+    "Total": 240.68,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 71,
+    "Date": "2023-07-15T07:35:44.3574154-04:00",
+    "Cost": 2.66,
+    "Tax": 0.16,
+    "Total": 2.82,
+    "Items": [
+      {
+        "ItemId": 2,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 72,
+    "Date": "2023-08-20T01:15:05.1108588-04:00",
+    "Cost": 303.03,
+    "Tax": 18.18,
+    "Total": 321.21,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 73,
+    "Date": "2023-08-05T07:42:58.0920641-04:00",
+    "Cost": 344.55,
+    "Tax": 20.67,
+    "Total": 365.22,
+    "Items": [
+      {
+        "ItemId": 5,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 74,
+    "Date": "2023-07-23T06:07:31.5317349-04:00",
+    "Cost": 13.30,
+    "Tax": 0.80,
+    "Total": 14.10,
+    "Items": [
+      {
+        "ItemId": 2,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 75,
+    "Date": "2023-07-07T02:23:15.3629949-04:00",
+    "Cost": 209.02,
+    "Tax": 12.54,
+    "Total": 221.56,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 76,
+    "Date": "2023-07-03T06:28:33.5510452-04:00",
+    "Cost": 137.80,
+    "Tax": 8.27,
+    "Total": 146.07,
+    "Items": [
+      {
+        "ItemId": 6,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 77,
+    "Date": "2023-07-27T14:02:08.8221506-04:00",
+    "Cost": 31.60,
+    "Tax": 1.90,
+    "Total": 33.50,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 78,
+    "Date": "2023-07-08T07:59:24.4386037-04:00",
+    "Cost": 299.90,
+    "Tax": 17.99,
+    "Total": 317.89,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 79,
+    "Date": "2023-07-02T12:14:14.1292479-04:00",
+    "Cost": 165.81,
+    "Tax": 9.95,
+    "Total": 175.76,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 80,
+    "Date": "2023-07-30T01:20:47.2392625-04:00",
+    "Cost": 37.92,
+    "Tax": 2.28,
+    "Total": 40.20,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 6
+      }
+    ]
+  },
+  {
+    "Id": 81,
+    "Date": "2023-08-19T17:52:11.8235039-04:00",
+    "Cost": 141.20,
+    "Tax": 8.47,
+    "Total": 149.67,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 82,
+    "Date": "2023-07-05T12:05:18.5320435-04:00",
+    "Cost": 633.94,
+    "Tax": 38.04,
+    "Total": 671.98,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 83,
+    "Date": "2023-07-24T09:54:16.3194875-04:00",
+    "Cost": 138.60,
+    "Tax": 8.32,
+    "Total": 146.92,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 84,
+    "Date": "2023-07-18T06:37:34.4491581-04:00",
+    "Cost": 261.20,
+    "Tax": 15.67,
+    "Total": 276.87,
+    "Items": [
+      {
+        "ItemId": 4,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 9,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 85,
+    "Date": "2023-08-03T15:13:24.2466197-04:00",
+    "Cost": 197.42,
+    "Tax": 11.85,
+    "Total": 209.27,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 4
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 86,
+    "Date": "2023-07-10T23:55:02.3407241-04:00",
+    "Cost": 68.90,
+    "Tax": 4.13,
+    "Total": 73.03,
+    "Items": [
+      {
+        "ItemId": 6,
+        "Quantity": 5
+      }
+    ]
+  },
+  {
+    "Id": 87,
+    "Date": "2023-07-08T07:37:21.9400659-04:00",
+    "Cost": 26.29,
+    "Tax": 1.58,
+    "Total": 27.87,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 88,
+    "Date": "2023-07-19T09:56:52.4817969-04:00",
+    "Cost": 237.06,
+    "Tax": 14.22,
+    "Total": 251.28,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 6
+      }
+    ]
+  },
+  {
+    "Id": 89,
+    "Date": "2023-06-30T09:33:12.7821157-04:00",
+    "Cost": 444.24,
+    "Tax": 26.65,
+    "Total": 470.89,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 10
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "Id": 90,
+    "Date": "2023-07-14T14:31:32.7486856-04:00",
+    "Cost": 142.89,
+    "Tax": 8.57,
+    "Total": 151.46,
+    "Items": [
+      {
+        "ItemId": 6,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 8,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 91,
+    "Date": "2023-08-09T11:28:31.1714744-04:00",
+    "Cost": 103.25,
+    "Tax": 6.20,
+    "Total": 109.45,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 7
+      }
+    ]
+  },
+  {
+    "Id": 92,
+    "Date": "2023-08-24T18:41:11.4223497-04:00",
+    "Cost": 282.03,
+    "Tax": 16.92,
+    "Total": 298.95,
+    "Items": [
+      {
+        "ItemId": 2,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 0,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 4
+      }
+    ]
+  },
+  {
+    "Id": 93,
+    "Date": "2023-08-19T03:13:40.9736238-04:00",
+    "Cost": 52.56,
+    "Tax": 3.15,
+    "Total": 55.71,
+    "Items": [
+      {
+        "ItemId": 3,
+        "Quantity": 4
+      }
+    ]
+  },
+  {
+    "Id": 94,
+    "Date": "2023-08-15T12:41:12.2710612-04:00",
+    "Cost": 440.59,
+    "Tax": 26.44,
+    "Total": 467.03,
+    "Items": [
+      {
+        "ItemId": 9,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 1,
+        "Quantity": 8
+      }
+    ]
+  },
+  {
+    "Id": 95,
+    "Date": "2023-08-24T13:24:43.6267284-04:00",
+    "Cost": 408.47,
+    "Tax": 24.51,
+    "Total": 432.98,
+    "Items": [
+      {
+        "ItemId": 7,
+        "Quantity": 9
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 1
+      },
+      {
+        "ItemId": 6,
+        "Quantity": 8
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 96,
+    "Date": "2023-08-07T13:30:10.4010203-04:00",
+    "Cost": 37.40,
+    "Tax": 2.24,
+    "Total": 39.64,
+    "Items": [
+      {
+        "ItemId": 1,
+        "Quantity": 2
+      }
+    ]
+  },
+  {
+    "Id": 97,
+    "Date": "2023-08-09T14:15:45.3138087-04:00",
+    "Cost": 37.48,
+    "Tax": 2.25,
+    "Total": 39.73,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 2
+      },
+      {
+        "ItemId": 2,
+        "Quantity": 6
+      }
+    ]
+  },
+  {
+    "Id": 98,
+    "Date": "2023-08-08T04:26:24.4485421-04:00",
+    "Cost": 382.57,
+    "Tax": 22.95,
+    "Total": 405.52,
+    "Items": [
+      {
+        "ItemId": 2,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 3
+      },
+      {
+        "ItemId": 3,
+        "Quantity": 5
+      },
+      {
+        "ItemId": 5,
+        "Quantity": 7
+      },
+      {
+        "ItemId": 4,
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "Id": 99,
+    "Date": "2023-07-31T05:04:05.0951454-04:00",
+    "Cost": 119.80,
+    "Tax": 7.19,
+    "Total": 126.99,
+    "Items": [
+      {
+        "ItemId": 8,
+        "Quantity": 6
+      },
+      {
+        "ItemId": 7,
+        "Quantity": 2
+      }
+    ]
+  }
+]
