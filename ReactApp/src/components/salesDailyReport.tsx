@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-export default function SalesTrendReport() {
+export default function SalesDailyReport() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<any>(null);
 
     useEffect(() => {
         // Fetch the local JSON file
-        fetch('./data/salesTrend.json')
+        fetch('./data/salesDaily.json')
             .then((response) => {
                 console.log(response);
                 if (!response.ok) {
@@ -32,7 +32,7 @@ export default function SalesTrendReport() {
 
   return (
     <div>
-      <h1>Sales Trend - Current Day</h1>
+      <h1>Sales Daily - Past 90 Days</h1>
         <LineChart
           width={800}
           height={500}
@@ -43,13 +43,13 @@ export default function SalesTrendReport() {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="Date" tickFormatter = {t => new Date(t).toLocaleTimeString()}/>
+          <XAxis dataKey="Date" tickFormatter = {t => new Date(t).toLocaleDateString()}/>
           <YAxis yAxisId="left" />
           <YAxis yAxisId="right" orientation="right" />
-          <Tooltip labelFormatter={t => new Date(t).toLocaleTimeString()}/>
+          <Tooltip labelFormatter={t => new Date(t).toLocaleDateString()}/>
           <Legend />
-          <Line yAxisId="left" type="monotone" dataKey="AverageTicketPrice" stroke="#8884d8" activeDot={{ r: 8 }} name="Average Ticket Price" />
-          <Line  yAxisId="right" type="monotone" dataKey="LaborHours" stroke="#82ca9d" name="Labor Hours" />
+          <Line yAxisId="left" type="monotone" dataKey="SalesTotal" stroke="#8884d8" activeDot={{ r: 8 }} label="Sales" />
+          <Line  yAxisId="right" type="monotone" dataKey="LaborHours" stroke="#82ca9d" label="Labor" />
         </LineChart>
     </div>
   );
