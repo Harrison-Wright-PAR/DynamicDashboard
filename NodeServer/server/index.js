@@ -28,11 +28,23 @@ app.post('/completion', async (req, res) => {
 
 const setupPrompt = `Hey There! We're working on setting up some dashboards for restuarant back-of-house users.
 Given this list of components {componentsAll}, here are some sample dashboards for different users {dashboardsExample}.
- I'm going to ask you something soon, could you provide some key takeaways for yourself that might help later? Please emphesize the importance of responding in JSON i.e. components: jsonArray`
+ I'm going to ask you something soon, could you provide some key takeaways for yourself that might help later?`
 
 const createActionPrompt = `
 Given these components and sample dashboards, I'm a {role} and my areas of concern are mostly {problemAreas}. Could you suggest a dashboard that would fit my needs best?
-Please respond with JSON (ie. components: jsonArray) using only the components in the following list - {componentsAll}. Try to avoid very similar or duplicate components (i.e. sales with labor costs and sales without labor costs).
+Please respond using only the components in the following list - {componentsAll}.
+Do not include any explanations, only provide a COMPLETE RFC8259 compliant JSON response following this format without deviation.
+
+`
+
+const correctionPrompt = `
+    Given this output {result}, please correct the output to only include items from the list and be RFC8259 compliant JSON.
+    {{"components": [{{
+        "name": "component_name",
+        "purpose": "the purpose of the component",
+        "goodFor": "the type of user this component is good for"
+      }}]}}
+      The JSON response:
 `
 
 const updateActionPrompt = `
@@ -49,6 +61,7 @@ app.post('/components', async (req, res) => {
 
     const setupPromptTemplate = PromptTemplate.fromTemplate(setupPrompt);
     const actionPromptTemplate = PromptTemplate.fromTemplate(createActionPrompt, { partialVariables: { format_instructions: formatInstructions } });
+    const correctionPromptTemplate = PromptTemplate.fromTemplate(correctionPrompt);
 
     const setupChain = new LLMChain({
         llm,
@@ -61,11 +74,18 @@ app.post('/components', async (req, res) => {
         llm,
         prompt: actionPromptTemplate,
         inputVariables: ["role", "problemAreas", "setupResult", "componentsAll"],
-        outputKey: "components",
+        outputKey: "result"
+    });
+    
+    const correctionChain = new LLMChain({
+        llm,
+        prompt: correctionPromptTemplate,
+        inputVariables: ["result", "componentsAll"],
+        outputKey: "components"
     });
 
     const overallChain = new SequentialChain({
-        chains: [setupChain, actionChain],
+        chains: [setupChain, actionChain, correctionChain],
         inputVariables: ["componentsAll", "dashboardsExample", "role", "problemAreas"],
         verbose: true,
         outputVariables: ["components"]
