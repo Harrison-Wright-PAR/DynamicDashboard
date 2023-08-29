@@ -12,6 +12,8 @@ namespace SampleDataGenerator.DTOs
 
         public DateTime Date { get; set; }
 
-        public decimal Hours { get; set; }
+        public int ActualHours { get; set; }
+
+        public int TargetHours { get; set; }
     }
 }

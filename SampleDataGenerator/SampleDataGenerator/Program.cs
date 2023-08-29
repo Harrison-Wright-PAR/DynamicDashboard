@@ -59,10 +59,11 @@ var laborDayOffset = 0;
 var laborDate = DateTime.Now.Date;
 var laborCost = new Faker<LaborCost>()
     .RuleFor(l => l.Offset, f => laborDayOffset)
-    .RuleFor(l => l.Hours, f => Math.Round(f.Random.GaussianDecimal(80d, 20d), 2))
+    .RuleFor(l => l.ActualHours, f => f.Random.GaussianInt(80d, 20d))
+    .RuleFor(l => l.TargetHours, f => f.Random.GaussianInt(80d, 10d))
     .RuleFor(l => l.Date, f => laborDate.AddDays(-(laborDayOffset++)));
 
-var laborCostData = laborCost.Generate(60);
+var laborCostData = laborCost.Generate(14);
 var laborCostJson = JsonSerializer.Serialize(laborCostData, new JsonSerializerOptions { WriteIndented = true });
 File.WriteAllText("data/laborCost.json", laborCostJson);
 DataOutputter.WriteConsole("labor cost", laborCostData.Count, laborCostJson);
