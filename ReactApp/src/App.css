@@ -34,6 +34,8 @@
   align-items: center;
   height: 100vh;
   flex-direction:column;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .response-box {
@@ -57,4 +59,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Offline {
+  color: red
+}
+
+.Online {
+  color: green
+}
+
+.MainApp{
+  padding-top: 25%
 }
