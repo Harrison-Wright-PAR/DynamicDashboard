@@ -8,6 +8,8 @@ namespace SampleDataGenerator.DTOs
 {
     public record LaborIrregularity
     {
+        public int Id { get; set; }
+
         public string Name { get; set; } = null!;
 
         public string LastEvent { get; set; } = null!;

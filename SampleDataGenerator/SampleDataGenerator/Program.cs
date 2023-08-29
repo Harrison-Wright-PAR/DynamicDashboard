@@ -92,7 +92,9 @@ var customerFeedbackJson = JsonSerializer.Serialize(customerFeedbackData, new Js
 File.WriteAllText("data/customerFeedback.json", customerFeedbackJson);
 DataOutputter.WriteConsole("customer feedback", customerFeedbackData.Count, customerFeedbackJson);
 
+var laborIrregularityId = 0;
 var laborIrregularities = new Faker<LaborIrregularity>()
+    .RuleFor(l => l.Id, f => laborIrregularityId++)
     .RuleFor(l => l.Date, f => f.Date.Recent(60))
     .RuleFor(l => l.LastEvent, f => f.Lorem.Sentence(5))
     .RuleFor(l => l.Name, f => f.Name.FullName());
