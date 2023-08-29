@@ -102,14 +102,27 @@ var laborIrregularityJson = JsonSerializer.Serialize(laborIrregularityData, new 
 File.WriteAllText("data/laborIrregularity.json", laborIrregularityJson);
 DataOutputter.WriteConsole("labor irregularity", laborIrregularityData.Count, laborIrregularityJson);
 
+// ACtually used on Daily Sales Report
+//var salesTrendsDayOffset = 0;
+//var salesTrendsDate = DateTime.Now.Date;
+//var salesTrends = new Faker<SalesTrend>()
+//        .RuleFor(l => l.Offset, f => salesTrendsDayOffset)
+//        .RuleFor(l => l.Date, f => salesTrendsDate.AddDays(-(salesTrendsDayOffset++)))
+//        .RuleFor(l => l.SalesTotal, s => s.Finance.Amount(1000, 5000))
+//        .RuleFor(l => l.LaborHours, f => Math.Round(f.Random.GaussianDecimal(80d, 20d), 2));
+//var salesTrendData = salesTrends.Generate(90);
+//var salesTrendJson = JsonSerializer.Serialize(salesTrendData, new JsonSerializerOptions { WriteIndented = true });
+//File.WriteAllText("data/salesTrend.json", salesTrendJson);
+//DataOutputter.WriteConsole("sales trend", salesTrendData.Count, salesTrendJson);
+
 var salesTrendsDayOffset = 0;
-var salesTrendsDate = DateTime.Now.Date;
+var salesTrendsDate = DateTime.Now.Date.AddDays(1);
 var salesTrends = new Faker<SalesTrend>()
         .RuleFor(l => l.Offset, f => salesTrendsDayOffset)
-        .RuleFor(l => l.Date, f => salesTrendsDate.AddDays(-(salesTrendsDayOffset++)))
-        .RuleFor(l => l.SalesTotal, s => s.Finance.Amount(1000, 5000))
-        .RuleFor(l => l.LaborHours, f => Math.Round(f.Random.GaussianDecimal(80d, 20d), 2));
-var salesTrendData = salesTrends.Generate(90);
+        .RuleFor(l => l.Date, f => salesTrendsDate.AddHours(-(salesTrendsDayOffset++)))
+        .RuleFor(l => l.AverageTicketPrice, s => Math.Round(s.Random.GaussianDecimal(25d, 10d), 2))
+        .RuleFor(l => l.LaborHours, f => Math.Round(f.Random.GaussianDecimal(25d, 5d), 2));
+var salesTrendData = salesTrends.Generate(24);
 var salesTrendJson = JsonSerializer.Serialize(salesTrendData, new JsonSerializerOptions { WriteIndented = true });
 File.WriteAllText("data/salesTrend.json", salesTrendJson);
 DataOutputter.WriteConsole("sales trend", salesTrendData.Count, salesTrendJson);

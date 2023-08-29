@@ -12,7 +12,7 @@ namespace SampleDataGenerator.DTOs
 
         public DateTime Date { get; set; }
 
-        public decimal SalesTotal { get; set; }
+        public decimal AverageTicketPrice { get; set; }
 
         public decimal LaborHours { get; set; }
     }

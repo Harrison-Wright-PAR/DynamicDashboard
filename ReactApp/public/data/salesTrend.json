@@ -1,542 +1,146 @@
 [
   {
     "Offset": 0,
-    "Date": "2023-08-29T00:00:00-04:00",
-    "SalesTotal": 4211.97,
-    "LaborHours": 75.41
+    "Date": "2023-08-30T00:00:00-04:00",
+    "AverageTicketPrice": 0.31,
+    "LaborHours": 24.55
   },
   {
     "Offset": 1,
-    "Date": "2023-08-28T00:00:00-04:00",
-    "SalesTotal": 3687.54,
-    "LaborHours": 69.46
+    "Date": "2023-08-29T23:00:00-04:00",
+    "AverageTicketPrice": 32.03,
+    "LaborHours": 37.19
   },
   {
     "Offset": 2,
-    "Date": "2023-08-27T00:00:00-04:00",
-    "SalesTotal": 4437.37,
-    "LaborHours": 93.50
+    "Date": "2023-08-29T22:00:00-04:00",
+    "AverageTicketPrice": 21.41,
+    "LaborHours": 24.16
   },
   {
     "Offset": 3,
-    "Date": "2023-08-26T00:00:00-04:00",
-    "SalesTotal": 1747.69,
-    "LaborHours": 43.84
+    "Date": "2023-08-29T21:00:00-04:00",
+    "AverageTicketPrice": 8.87,
+    "LaborHours": 25.36
   },
   {
     "Offset": 4,
-    "Date": "2023-08-25T00:00:00-04:00",
-    "SalesTotal": 4791.74,
-    "LaborHours": 87.45
+    "Date": "2023-08-29T20:00:00-04:00",
+    "AverageTicketPrice": 18.43,
+    "LaborHours": 23.70
   },
   {
     "Offset": 5,
-    "Date": "2023-08-24T00:00:00-04:00",
-    "SalesTotal": 1907.35,
-    "LaborHours": 77.48
+    "Date": "2023-08-29T19:00:00-04:00",
+    "AverageTicketPrice": 16.19,
+    "LaborHours": 31.09
   },
   {
     "Offset": 6,
-    "Date": "2023-08-23T00:00:00-04:00",
-    "SalesTotal": 3491.82,
-    "LaborHours": 89.35
+    "Date": "2023-08-29T18:00:00-04:00",
+    "AverageTicketPrice": 24.99,
+    "LaborHours": 28.05
   },
   {
     "Offset": 7,
-    "Date": "2023-08-22T00:00:00-04:00",
-    "SalesTotal": 4061.67,
-    "LaborHours": 78.59
+    "Date": "2023-08-29T17:00:00-04:00",
+    "AverageTicketPrice": 26.82,
+    "LaborHours": 16.08
   },
   {
     "Offset": 8,
-    "Date": "2023-08-21T00:00:00-04:00",
-    "SalesTotal": 4723.70,
-    "LaborHours": 104.86
+    "Date": "2023-08-29T16:00:00-04:00",
+    "AverageTicketPrice": 52.57,
+    "LaborHours": 17.82
   },
   {
     "Offset": 9,
-    "Date": "2023-08-20T00:00:00-04:00",
-    "SalesTotal": 1111.54,
-    "LaborHours": 79.77
+    "Date": "2023-08-29T15:00:00-04:00",
+    "AverageTicketPrice": 20.45,
+    "LaborHours": 22.86
   },
   {
     "Offset": 10,
-    "Date": "2023-08-19T00:00:00-04:00",
-    "SalesTotal": 2408.83,
-    "LaborHours": 57.55
+    "Date": "2023-08-29T14:00:00-04:00",
+    "AverageTicketPrice": 36.32,
+    "LaborHours": 20.61
   },
   {
     "Offset": 11,
-    "Date": "2023-08-18T00:00:00-04:00",
-    "SalesTotal": 4478.64,
-    "LaborHours": 98.07
+    "Date": "2023-08-29T13:00:00-04:00",
+    "AverageTicketPrice": 17.98,
+    "LaborHours": 24.61
   },
   {
     "Offset": 12,
-    "Date": "2023-08-17T00:00:00-04:00",
-    "SalesTotal": 1893.12,
-    "LaborHours": 68.94
+    "Date": "2023-08-29T12:00:00-04:00",
+    "AverageTicketPrice": 14.47,
+    "LaborHours": 26.56
   },
   {
     "Offset": 13,
-    "Date": "2023-08-16T00:00:00-04:00",
-    "SalesTotal": 4386.20,
-    "LaborHours": 92.71
+    "Date": "2023-08-29T11:00:00-04:00",
+    "AverageTicketPrice": 20.21,
+    "LaborHours": 22.51
   },
   {
     "Offset": 14,
-    "Date": "2023-08-15T00:00:00-04:00",
-    "SalesTotal": 1470.24,
-    "LaborHours": 93.14
+    "Date": "2023-08-29T10:00:00-04:00",
+    "AverageTicketPrice": 14.72,
+    "LaborHours": 28.22
   },
   {
     "Offset": 15,
-    "Date": "2023-08-14T00:00:00-04:00",
-    "SalesTotal": 2506.27,
-    "LaborHours": 80.77
+    "Date": "2023-08-29T09:00:00-04:00",
+    "AverageTicketPrice": 28.57,
+    "LaborHours": 19.50
   },
   {
     "Offset": 16,
-    "Date": "2023-08-13T00:00:00-04:00",
-    "SalesTotal": 4029.95,
-    "LaborHours": 47.78
+    "Date": "2023-08-29T08:00:00-04:00",
+    "AverageTicketPrice": 33.52,
+    "LaborHours": 23.85
   },
   {
     "Offset": 17,
-    "Date": "2023-08-12T00:00:00-04:00",
-    "SalesTotal": 1341.54,
-    "LaborHours": 53.22
+    "Date": "2023-08-29T07:00:00-04:00",
+    "AverageTicketPrice": 29.45,
+    "LaborHours": 22.36
   },
   {
     "Offset": 18,
-    "Date": "2023-08-11T00:00:00-04:00",
-    "SalesTotal": 1228.88,
-    "LaborHours": 67.93
+    "Date": "2023-08-29T06:00:00-04:00",
+    "AverageTicketPrice": 35.77,
+    "LaborHours": 28.37
   },
   {
     "Offset": 19,
-    "Date": "2023-08-10T00:00:00-04:00",
-    "SalesTotal": 1711.65,
-    "LaborHours": 66.32
+    "Date": "2023-08-29T05:00:00-04:00",
+    "AverageTicketPrice": 16.11,
+    "LaborHours": 15.96
   },
   {
     "Offset": 20,
-    "Date": "2023-08-09T00:00:00-04:00",
-    "SalesTotal": 4554.76,
-    "LaborHours": 68.90
+    "Date": "2023-08-29T04:00:00-04:00",
+    "AverageTicketPrice": 41.25,
+    "LaborHours": 26.86
   },
   {
     "Offset": 21,
-    "Date": "2023-08-08T00:00:00-04:00",
-    "SalesTotal": 2545.99,
-    "LaborHours": 64.96
+    "Date": "2023-08-29T03:00:00-04:00",
+    "AverageTicketPrice": 17.51,
+    "LaborHours": 24.37
   },
   {
     "Offset": 22,
-    "Date": "2023-08-07T00:00:00-04:00",
-    "SalesTotal": 4852.42,
-    "LaborHours": 96.22
+    "Date": "2023-08-29T02:00:00-04:00",
+    "AverageTicketPrice": 28.13,
+    "LaborHours": 27.34
   },
   {
     "Offset": 23,
-    "Date": "2023-08-06T00:00:00-04:00",
-    "SalesTotal": 4383.49,
-    "LaborHours": 78.30
-  },
-  {
-    "Offset": 24,
-    "Date": "2023-08-05T00:00:00-04:00",
-    "SalesTotal": 4428.16,
-    "LaborHours": 100.21
-  },
-  {
-    "Offset": 25,
-    "Date": "2023-08-04T00:00:00-04:00",
-    "SalesTotal": 2511.95,
-    "LaborHours": 67.06
-  },
-  {
-    "Offset": 26,
-    "Date": "2023-08-03T00:00:00-04:00",
-    "SalesTotal": 3849.97,
-    "LaborHours": 58.77
-  },
-  {
-    "Offset": 27,
-    "Date": "2023-08-02T00:00:00-04:00",
-    "SalesTotal": 4133.58,
-    "LaborHours": 88.92
-  },
-  {
-    "Offset": 28,
-    "Date": "2023-08-01T00:00:00-04:00",
-    "SalesTotal": 3158.21,
-    "LaborHours": 101.17
-  },
-  {
-    "Offset": 29,
-    "Date": "2023-07-31T00:00:00-04:00",
-    "SalesTotal": 1303.06,
-    "LaborHours": 83.49
-  },
-  {
-    "Offset": 30,
-    "Date": "2023-07-30T00:00:00-04:00",
-    "SalesTotal": 4614.40,
-    "LaborHours": 77.46
-  },
-  {
-    "Offset": 31,
-    "Date": "2023-07-29T00:00:00-04:00",
-    "SalesTotal": 4670.94,
-    "LaborHours": 63.42
-  },
-  {
-    "Offset": 32,
-    "Date": "2023-07-28T00:00:00-04:00",
-    "SalesTotal": 2074.38,
-    "LaborHours": 91.15
-  },
-  {
-    "Offset": 33,
-    "Date": "2023-07-27T00:00:00-04:00",
-    "SalesTotal": 3769.60,
-    "LaborHours": 83.49
-  },
-  {
-    "Offset": 34,
-    "Date": "2023-07-26T00:00:00-04:00",
-    "SalesTotal": 3378.11,
-    "LaborHours": 89.08
-  },
-  {
-    "Offset": 35,
-    "Date": "2023-07-25T00:00:00-04:00",
-    "SalesTotal": 2659.06,
-    "LaborHours": 88.13
-  },
-  {
-    "Offset": 36,
-    "Date": "2023-07-24T00:00:00-04:00",
-    "SalesTotal": 3860.75,
-    "LaborHours": 95.51
-  },
-  {
-    "Offset": 37,
-    "Date": "2023-07-23T00:00:00-04:00",
-    "SalesTotal": 3426.82,
-    "LaborHours": 49.37
-  },
-  {
-    "Offset": 38,
-    "Date": "2023-07-22T00:00:00-04:00",
-    "SalesTotal": 3977.38,
-    "LaborHours": 87.37
-  },
-  {
-    "Offset": 39,
-    "Date": "2023-07-21T00:00:00-04:00",
-    "SalesTotal": 4414.93,
-    "LaborHours": 76.57
-  },
-  {
-    "Offset": 40,
-    "Date": "2023-07-20T00:00:00-04:00",
-    "SalesTotal": 2776.78,
-    "LaborHours": 73.91
-  },
-  {
-    "Offset": 41,
-    "Date": "2023-07-19T00:00:00-04:00",
-    "SalesTotal": 4521.70,
-    "LaborHours": 67.97
-  },
-  {
-    "Offset": 42,
-    "Date": "2023-07-18T00:00:00-04:00",
-    "SalesTotal": 2465.74,
-    "LaborHours": 56.27
-  },
-  {
-    "Offset": 43,
-    "Date": "2023-07-17T00:00:00-04:00",
-    "SalesTotal": 4211.43,
-    "LaborHours": 85.76
-  },
-  {
-    "Offset": 44,
-    "Date": "2023-07-16T00:00:00-04:00",
-    "SalesTotal": 2080.87,
-    "LaborHours": 75.62
-  },
-  {
-    "Offset": 45,
-    "Date": "2023-07-15T00:00:00-04:00",
-    "SalesTotal": 3202.78,
-    "LaborHours": 63.32
-  },
-  {
-    "Offset": 46,
-    "Date": "2023-07-14T00:00:00-04:00",
-    "SalesTotal": 1789.33,
-    "LaborHours": 85.52
-  },
-  {
-    "Offset": 47,
-    "Date": "2023-07-13T00:00:00-04:00",
-    "SalesTotal": 2373.35,
-    "LaborHours": 76.94
-  },
-  {
-    "Offset": 48,
-    "Date": "2023-07-12T00:00:00-04:00",
-    "SalesTotal": 2486.59,
-    "LaborHours": 61.92
-  },
-  {
-    "Offset": 49,
-    "Date": "2023-07-11T00:00:00-04:00",
-    "SalesTotal": 4829.59,
-    "LaborHours": 66.61
-  },
-  {
-    "Offset": 50,
-    "Date": "2023-07-10T00:00:00-04:00",
-    "SalesTotal": 1395.68,
-    "LaborHours": 68.14
-  },
-  {
-    "Offset": 51,
-    "Date": "2023-07-09T00:00:00-04:00",
-    "SalesTotal": 4486.50,
-    "LaborHours": 61.83
-  },
-  {
-    "Offset": 52,
-    "Date": "2023-07-08T00:00:00-04:00",
-    "SalesTotal": 2716.26,
-    "LaborHours": 91.67
-  },
-  {
-    "Offset": 53,
-    "Date": "2023-07-07T00:00:00-04:00",
-    "SalesTotal": 3174.54,
-    "LaborHours": 109.75
-  },
-  {
-    "Offset": 54,
-    "Date": "2023-07-06T00:00:00-04:00",
-    "SalesTotal": 3149.95,
-    "LaborHours": 91.69
-  },
-  {
-    "Offset": 55,
-    "Date": "2023-07-05T00:00:00-04:00",
-    "SalesTotal": 4711.23,
-    "LaborHours": 105.17
-  },
-  {
-    "Offset": 56,
-    "Date": "2023-07-04T00:00:00-04:00",
-    "SalesTotal": 1005.26,
-    "LaborHours": 87.37
-  },
-  {
-    "Offset": 57,
-    "Date": "2023-07-03T00:00:00-04:00",
-    "SalesTotal": 1500.32,
-    "LaborHours": 81.16
-  },
-  {
-    "Offset": 58,
-    "Date": "2023-07-02T00:00:00-04:00",
-    "SalesTotal": 3276.12,
-    "LaborHours": 87.38
-  },
-  {
-    "Offset": 59,
-    "Date": "2023-07-01T00:00:00-04:00",
-    "SalesTotal": 4348.32,
-    "LaborHours": 59.34
-  },
-  {
-    "Offset": 60,
-    "Date": "2023-06-30T00:00:00-04:00",
-    "SalesTotal": 4634.51,
-    "LaborHours": 51.78
-  },
-  {
-    "Offset": 61,
-    "Date": "2023-06-29T00:00:00-04:00",
-    "SalesTotal": 2196.50,
-    "LaborHours": 61.79
-  },
-  {
-    "Offset": 62,
-    "Date": "2023-06-28T00:00:00-04:00",
-    "SalesTotal": 1497.90,
-    "LaborHours": 64.05
-  },
-  {
-    "Offset": 63,
-    "Date": "2023-06-27T00:00:00-04:00",
-    "SalesTotal": 2841.99,
-    "LaborHours": 55.10
-  },
-  {
-    "Offset": 64,
-    "Date": "2023-06-26T00:00:00-04:00",
-    "SalesTotal": 2750.44,
-    "LaborHours": 60.72
-  },
-  {
-    "Offset": 65,
-    "Date": "2023-06-25T00:00:00-04:00",
-    "SalesTotal": 3764.71,
-    "LaborHours": 83.09
-  },
-  {
-    "Offset": 66,
-    "Date": "2023-06-24T00:00:00-04:00",
-    "SalesTotal": 3745.07,
-    "LaborHours": 85.18
-  },
-  {
-    "Offset": 67,
-    "Date": "2023-06-23T00:00:00-04:00",
-    "SalesTotal": 2332.17,
-    "LaborHours": 60.73
-  },
-  {
-    "Offset": 68,
-    "Date": "2023-06-22T00:00:00-04:00",
-    "SalesTotal": 3035.09,
-    "LaborHours": 90.41
-  },
-  {
-    "Offset": 69,
-    "Date": "2023-06-21T00:00:00-04:00",
-    "SalesTotal": 4378.65,
-    "LaborHours": 87.51
-  },
-  {
-    "Offset": 70,
-    "Date": "2023-06-20T00:00:00-04:00",
-    "SalesTotal": 3296.45,
-    "LaborHours": 102.65
-  },
-  {
-    "Offset": 71,
-    "Date": "2023-06-19T00:00:00-04:00",
-    "SalesTotal": 1303.23,
-    "LaborHours": 82.50
-  },
-  {
-    "Offset": 72,
-    "Date": "2023-06-18T00:00:00-04:00",
-    "SalesTotal": 2941.70,
-    "LaborHours": 87.97
-  },
-  {
-    "Offset": 73,
-    "Date": "2023-06-17T00:00:00-04:00",
-    "SalesTotal": 1803.42,
-    "LaborHours": 82.69
-  },
-  {
-    "Offset": 74,
-    "Date": "2023-06-16T00:00:00-04:00",
-    "SalesTotal": 2934.24,
-    "LaborHours": 98.32
-  },
-  {
-    "Offset": 75,
-    "Date": "2023-06-15T00:00:00-04:00",
-    "SalesTotal": 4480.81,
-    "LaborHours": 92.11
-  },
-  {
-    "Offset": 76,
-    "Date": "2023-06-14T00:00:00-04:00",
-    "SalesTotal": 2383.61,
-    "LaborHours": 97.31
-  },
-  {
-    "Offset": 77,
-    "Date": "2023-06-13T00:00:00-04:00",
-    "SalesTotal": 2371.97,
-    "LaborHours": 38.85
-  },
-  {
-    "Offset": 78,
-    "Date": "2023-06-12T00:00:00-04:00",
-    "SalesTotal": 4909.62,
-    "LaborHours": 89.94
-  },
-  {
-    "Offset": 79,
-    "Date": "2023-06-11T00:00:00-04:00",
-    "SalesTotal": 1229.57,
-    "LaborHours": 64.32
-  },
-  {
-    "Offset": 80,
-    "Date": "2023-06-10T00:00:00-04:00",
-    "SalesTotal": 2038.63,
-    "LaborHours": 76.83
-  },
-  {
-    "Offset": 81,
-    "Date": "2023-06-09T00:00:00-04:00",
-    "SalesTotal": 2975.74,
-    "LaborHours": 73.36
-  },
-  {
-    "Offset": 82,
-    "Date": "2023-06-08T00:00:00-04:00",
-    "SalesTotal": 1117.58,
-    "LaborHours": 73.17
-  },
-  {
-    "Offset": 83,
-    "Date": "2023-06-07T00:00:00-04:00",
-    "SalesTotal": 1838.47,
-    "LaborHours": 74.89
-  },
-  {
-    "Offset": 84,
-    "Date": "2023-06-06T00:00:00-04:00",
-    "SalesTotal": 2243.04,
-    "LaborHours": 114.43
-  },
-  {
-    "Offset": 85,
-    "Date": "2023-06-05T00:00:00-04:00",
-    "SalesTotal": 1057.72,
-    "LaborHours": 102.57
-  },
-  {
-    "Offset": 86,
-    "Date": "2023-06-04T00:00:00-04:00",
-    "SalesTotal": 4197.38,
-    "LaborHours": 62.50
-  },
-  {
-    "Offset": 87,
-    "Date": "2023-06-03T00:00:00-04:00",
-    "SalesTotal": 3306.94,
-    "LaborHours": 44.35
-  },
-  {
-    "Offset": 88,
-    "Date": "2023-06-02T00:00:00-04:00",
-    "SalesTotal": 1013.19,
-    "LaborHours": 93.46
-  },
-  {
-    "Offset": 89,
-    "Date": "2023-06-01T00:00:00-04:00",
-    "SalesTotal": 3783.48,
-    "LaborHours": 78.48
+    "Date": "2023-08-29T01:00:00-04:00",
+    "AverageTicketPrice": 32.24,
+    "LaborHours": 24.65
   }
 ]
