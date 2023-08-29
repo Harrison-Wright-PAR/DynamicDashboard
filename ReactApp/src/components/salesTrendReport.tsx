@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -31,11 +32,10 @@ export default function SalesTrendReport() {
     if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
-      <h1>Sales Trend - Current Day</h1>
+    <Box>
         <LineChart
-          width={800}
-          height={500}
+          width={600}
+          height={400}
           data={data}
           margin={{
             top: 5,
@@ -51,6 +51,6 @@ export default function SalesTrendReport() {
           <Line yAxisId="left" type="monotone" dataKey="AverageTicketPrice" stroke="#8884d8" activeDot={{ r: 8 }} name="Average Ticket Price" />
           <Line  yAxisId="right" type="monotone" dataKey="LaborHours" stroke="#82ca9d" name="Labor Hours" />
         </LineChart>
-    </div>
+    </Box>
   );
 }

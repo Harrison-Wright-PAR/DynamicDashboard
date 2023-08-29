@@ -10,6 +10,11 @@ import { Button, TextField, Box, Container, Grid } from '@mui/material';
 import { WidthProvider, Responsive } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
+import LaborCostReport from './components/laborCostReport';
+import LaborIrregularitiesReport from './components/laborIrregularitiesReport';
+import LiveSalesReport from './components/liveSalesReport';
+import MenuChangesReport from './components/menuChangesReport';
+import SalesDailyReport from './components/salesDailyReport';
 type ComponentMap = {
   [key: string]: React.ComponentType<any>;
 }
@@ -17,7 +22,12 @@ type ComponentMap = {
 const componentMap: ComponentMap = {
   HelloUser: HelloUser,
   SalesReport: SalesReport,
-  SalesTrendReport: SalesTrendReport
+  SalesTrendReport: SalesTrendReport,
+  LaborCostReport: LaborCostReport,
+  LaborIrregularitiesReport: LaborIrregularitiesReport,
+  LiveSalesReport: LiveSalesReport,
+  MenuChangesReport: MenuChangesReport,
+  SalesDailyReport: SalesDailyReport
 }
 
 function App() {
@@ -30,10 +40,15 @@ function App() {
 
   const ResponsiveGridLayout = WidthProvider(Responsive);
 
-  const layout = [
+  const layout : Array<LayoutItem> = [
     { i: 'HelloUser', x: 0, y: 0, w: 6, h: 4 },
     { i: 'SalesReport', x: 6, y: 0, w: 6, h: 4 },
-    { i: 'SalesTrendReport', x: 20, y: 4, w: 12, h: 8 }
+    { i: 'SalesTrendReport', x: 20, y: 4, w: 24, h: 16 },
+    { i: 'LaborCostReport', x: 0, y: 4, w: 12, h: 8 },
+    { i: 'LaborIrregularitiesReport', x: 12, y: 4, w: 8, h: 8 },
+    { i: 'LiveSalesReport', x: 0, y: 12, w: 12, h: 8 },
+    { i: 'MenuChangesReport', x: 12, y: 12, w: 8, h: 8 },
+    { i: 'SalesDailyReport', x: 20, y: 0, w: 12, h: 4 },
   ];
 
   const handleButtonClick = async () => {
@@ -50,7 +65,13 @@ function App() {
     components = components.filter((x: any) => x['name'] in componentMap);
     components = components.map((x: any, i: number) => {
       x['id'] = i
-      x['layout'] = layout.find((item) => item.i === x.name);
+      var defaultLayout = layout.find((item) => item.i === x.name);
+      if(defaultLayout == undefined) {
+        defaultLayout = { i: x.name, x: 0, y: 0, w: 4, h: 4 };
+      }
+      defaultLayout['x'] = i * 100;
+      defaultLayout['y'] = i * 100;
+      x['layout'] = 
       console.log(x);
       return x;
     })
@@ -82,14 +103,14 @@ function App() {
       {
         goodFor: "sales, management, marketing, store operator, franchisee",
         id: 1,
-        layout: { i: "SalesReport", x: 6, y: 0, w: 6, h: 4 },
+        layout: { i: "SalesReport", x: 20, y: 20, w: 6, h: 4 },
         name: "SalesReport",
         purpose: "show the sales report",
       },
       {
         goodFor: "management, franchise owner, franchisee",
         id: 2,
-        layout: { i: "SalesTrendReport", x: 20, y: 4, w: 12, h: 8 },
+        layout: { i: "SalesTrendReport", x: 40, y: 40, w: 40, h: 10 },
         name: "SalesTrendReport",
         purpose: "show the sales trend for a single location",
       },
@@ -99,8 +120,8 @@ function App() {
 
 
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Container maxWidth="lg">
+      <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center' }}>
         <Box sx={{ mt: 3 }}>
           <TextField sx={{ width: '400px'  }} rows={3} label="Input Value" value={inputValue} multiline={true} onChange={(e) => setInputValue(e.target.value)} />
           <Button variant="contained" sx={{ margin: '10px'}}  onClick={handleButtonClick}>Call API</Button>
@@ -118,7 +139,7 @@ function App() {
             className="layout"
             layouts={{ lg: layout }}
             breakpoints={{ lg: 1600 }}
-            cols={{ lg: 12 }}
+            cols={{ lg: 40 }}
             rowHeight={30}
           >
             {components && components.length > 0 && (
@@ -152,6 +173,14 @@ interface Component {
   layout?: { i: string; x: number; y: number; w: number; h: number };
   name: string;
   purpose: string;
+}
+
+interface LayoutItem{
+  i: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
 }
 
 

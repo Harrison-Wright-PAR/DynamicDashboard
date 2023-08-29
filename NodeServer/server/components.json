@@ -43,5 +43,30 @@
         "name": "DeviceHealth",
         "purpose": "show the health of devices on a stack",
         "goodFor": "support, admin"
+    },
+    {
+        "name": "LaborCostReport",
+        "purpose": "show the labor cost report",
+        "goodFor": "management, franchise owner, franchisee"
+    },
+    {
+        "name": "LaborIrregularitiesReport",
+        "purpose": "Find potential action items for managers and franchisees to improve labor cost or combat fraud",
+        "goodFor": "management, franchise owner, franchisee, admin"
+    },
+    {
+        "name": "LiveSalesReport",
+        "purpose": "show the live sales report",
+        "goodFor": "management, franchise owner, franchisee, admin"
+    },
+    {
+        "name": "MenuChangesReport",
+        "purpose": "show the menu changes report",
+        "goodFor": "management, franchise owner, franchisee, admin, support"
+    },
+    {
+        "name": "SalesDailyReport",
+        "purpose": "show the sales daily report",
+        "goodFor": "management, franchise owner, franchisee"
     }
 ]
