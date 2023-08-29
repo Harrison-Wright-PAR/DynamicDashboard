@@ -87,17 +87,6 @@ function App() {
         purpose: "show the sales report",
       },
       {
-        goodFor: "franchise owner, management",
-        name: "LaborCostAnalysis",
-        purpose: "show the labor cost analysis",
-      },
-      {
-        goodFor: "management, franchise owner, franchisee",
-        name: "SalesSummaryTotal",
-        purpose:
-          "show the sales summary for multiple locations along with some near-run trends",
-      },
-      {
         goodFor: "management, franchise owner, franchisee",
         id: 2,
         layout: { i: "SalesTrendReport", x: 20, y: 4, w: 12, h: 8 },
@@ -118,7 +107,7 @@ function App() {
         </Box>
         {apiResponse && (
           <Box sx={{ mt: 3 }}>
-            <JsonView data={apiResponse} shouldInitiallyExpand={allExpanded} style={darkStyles} />
+            <JsonView data={apiResponse} shouldInitiallyExpand={{ "level": 2 }} style={darkStyles} />
           </Box>
         )}
         <Box sx={{ mt: 3 }}>
