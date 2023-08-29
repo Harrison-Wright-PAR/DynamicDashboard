@@ -107,7 +107,7 @@ function App() {
         </Box>
         {apiResponse && (
           <Box sx={{ mt: 3 }}>
-            <JsonView data={apiResponse} shouldInitiallyExpand={{ "level": 2 }} style={darkStyles} />
+            <JsonView data={apiResponse} shouldInitiallyExpand={allExpanded} style={darkStyles} />
           </Box>
         )}
         <Box sx={{ mt: 3 }}>
