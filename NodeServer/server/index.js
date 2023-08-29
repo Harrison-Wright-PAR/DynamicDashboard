@@ -7,14 +7,8 @@ const _components = require('./components');
 const _dashboards = require('./dashboards');
 
 const { OpenAI } = require('langchain/llms/openai');
-const { ChatOpenAI } = require('langchain/chat_models/openai');
 const { LLMChain, SequentialChain } = require('langchain/chains');
 const { PromptTemplate } = require('langchain/prompts');
-const { BufferMemory, SimpleMemory } = require('langchain/memory');
-const redis = require('redis');
-const { v4: uuidv4 } = require('uuid');
-const client = redis.createClient();
-client.connect();
 const { StructuredOutputParser } = require("langchain/output_parsers");
 
 const llm = new OpenAI({
@@ -30,34 +24,6 @@ app.post('/completion', async (req, res) => {
 
     res.json(completion);
 
-});
-
-redisGet = async (key) => {
-    return await client.get(key);
-}
-
-redisSet = async (key, value) => {
-    if (typeof value === 'object') value = JSON.stringify(value);
-    return await client.set(key, value);
-}
-
-app.post('/setup', async (req, res) => {
-    var userId = uuidv4();
-    redisSet(userId, { name: req.body.name })
-
-    const setupPromptTemplate = PromptTemplate.fromTemplate(setupPrompt);
-    const setupChain = new LLMChain({
-        llm,
-        prompt: setupPromptTemplate,
-        inputVariables: ["componentsAll", "dashboardsExample"],
-        outputKey: "setupResult"
-    });
-    var res = await setupChain.call({
-        componentsAll: JSON.stringify(_components),
-        dashboardsExample: JSON.stringify(_dashboards),
-    })
-    console.log(res)
-    await redisSet(userId, { name: req.body.name, setupResult: res['setupResult'] })
 });
 
 const setupPrompt = `Hey There! We're working on setting up some dashboards for restuarant back-of-house users.
