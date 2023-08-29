@@ -5,7 +5,6 @@ import { JsonView, allExpanded, darkStyles } from 'react-json-view-lite';
 import 'react-json-view-lite/dist/index.css';
 import HelloUser from './components/helloUser';
 import SalesReport from './components/salesReport';
-import SalesTrendReport from './components/salesTrendReport';
 
 type ComponentMap = {
   [key: string]: React.ComponentType<any>;
@@ -39,7 +38,29 @@ function App() {
 
   return (
     <div className="center-box">
-      <SalesTrendReport />
+      <div>
+        <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+        <button onClick={handleButtonClick}>Call API</button>
+      </div>
+      {apiResponse && (
+        <div className="json-view-container">
+          <JsonView data={apiResponse} shouldInitiallyExpand={allExpanded} style={darkStyles} />
+        </div>
+      )}
+      <div>
+        <button onClick={() => fetchComponents()}>Fetch Components</button>
+        {components && components.length > 0 && (
+          components.map((component: any) => {
+            const Component = componentMap[component['name']];
+            if (Component) {
+              return <Component key={component.id} />;
+            } else {
+              console.error(`Component with name ${component['name']} not found in componentMap`);
+              return null;
+            }
+          })
+        )}
+      </div>
     </div>
   );
 
