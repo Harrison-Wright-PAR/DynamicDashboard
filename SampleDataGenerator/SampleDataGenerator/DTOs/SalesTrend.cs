@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SampleDataGenerator.DTOs
 {
-    public record LaborCost
+    public record SalesTrend
     {
         public int Offset { get; set; }
 
         public DateTime Date { get; set; }
 
-        public int ActualHours { get; set; }
+        public decimal AverageTicketPrice { get; set; }
 
-        public int TargetHours { get; set; }
+        public decimal LaborHours { get; set; }
     }
 }

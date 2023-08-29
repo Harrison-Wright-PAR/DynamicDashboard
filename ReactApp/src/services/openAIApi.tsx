@@ -41,6 +41,12 @@ export default class Api {
         }
     }
 
+    public async updateDashboard(dashboard: string = "", userRequest: string = "") {
+        const updatedDashboard = await fetch("/components/update", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ dashboard: dashboard, userRequest: userRequest }) });
+        console.log(updatedDashboard);
+        return updatedDashboard.json();
+    }
+
     public generatePrompt(animal: string) {
         const capitalizedAnimal =
             animal[0].toUpperCase() + animal.slice(1).toLowerCase();

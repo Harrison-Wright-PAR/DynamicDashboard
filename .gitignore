@@ -48,3 +48,5 @@ Obj/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+/ReactApp/.vscode/launch.json
+/ReactApp/yarn.lock

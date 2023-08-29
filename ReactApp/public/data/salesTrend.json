@@ -1,0 +1,146 @@
+[
+  {
+    "Offset": 0,
+    "Date": "2023-08-30T00:00:00-04:00",
+    "AverageTicketPrice": 0.31,
+    "LaborHours": 24.55
+  },
+  {
+    "Offset": 1,
+    "Date": "2023-08-29T23:00:00-04:00",
+    "AverageTicketPrice": 32.03,
+    "LaborHours": 37.19
+  },
+  {
+    "Offset": 2,
+    "Date": "2023-08-29T22:00:00-04:00",
+    "AverageTicketPrice": 21.41,
+    "LaborHours": 24.16
+  },
+  {
+    "Offset": 3,
+    "Date": "2023-08-29T21:00:00-04:00",
+    "AverageTicketPrice": 8.87,
+    "LaborHours": 25.36
+  },
+  {
+    "Offset": 4,
+    "Date": "2023-08-29T20:00:00-04:00",
+    "AverageTicketPrice": 18.43,
+    "LaborHours": 23.70
+  },
+  {
+    "Offset": 5,
+    "Date": "2023-08-29T19:00:00-04:00",
+    "AverageTicketPrice": 16.19,
+    "LaborHours": 31.09
+  },
+  {
+    "Offset": 6,
+    "Date": "2023-08-29T18:00:00-04:00",
+    "AverageTicketPrice": 24.99,
+    "LaborHours": 28.05
+  },
+  {
+    "Offset": 7,
+    "Date": "2023-08-29T17:00:00-04:00",
+    "AverageTicketPrice": 26.82,
+    "LaborHours": 16.08
+  },
+  {
+    "Offset": 8,
+    "Date": "2023-08-29T16:00:00-04:00",
+    "AverageTicketPrice": 52.57,
+    "LaborHours": 17.82
+  },
+  {
+    "Offset": 9,
+    "Date": "2023-08-29T15:00:00-04:00",
+    "AverageTicketPrice": 20.45,
+    "LaborHours": 22.86
+  },
+  {
+    "Offset": 10,
+    "Date": "2023-08-29T14:00:00-04:00",
+    "AverageTicketPrice": 36.32,
+    "LaborHours": 20.61
+  },
+  {
+    "Offset": 11,
+    "Date": "2023-08-29T13:00:00-04:00",
+    "AverageTicketPrice": 17.98,
+    "LaborHours": 24.61
+  },
+  {
+    "Offset": 12,
+    "Date": "2023-08-29T12:00:00-04:00",
+    "AverageTicketPrice": 14.47,
+    "LaborHours": 26.56
+  },
+  {
+    "Offset": 13,
+    "Date": "2023-08-29T11:00:00-04:00",
+    "AverageTicketPrice": 20.21,
+    "LaborHours": 22.51
+  },
+  {
+    "Offset": 14,
+    "Date": "2023-08-29T10:00:00-04:00",
+    "AverageTicketPrice": 14.72,
+    "LaborHours": 28.22
+  },
+  {
+    "Offset": 15,
+    "Date": "2023-08-29T09:00:00-04:00",
+    "AverageTicketPrice": 28.57,
+    "LaborHours": 19.50
+  },
+  {
+    "Offset": 16,
+    "Date": "2023-08-29T08:00:00-04:00",
+    "AverageTicketPrice": 33.52,
+    "LaborHours": 23.85
+  },
+  {
+    "Offset": 17,
+    "Date": "2023-08-29T07:00:00-04:00",
+    "AverageTicketPrice": 29.45,
+    "LaborHours": 22.36
+  },
+  {
+    "Offset": 18,
+    "Date": "2023-08-29T06:00:00-04:00",
+    "AverageTicketPrice": 35.77,
+    "LaborHours": 28.37
+  },
+  {
+    "Offset": 19,
+    "Date": "2023-08-29T05:00:00-04:00",
+    "AverageTicketPrice": 16.11,
+    "LaborHours": 15.96
+  },
+  {
+    "Offset": 20,
+    "Date": "2023-08-29T04:00:00-04:00",
+    "AverageTicketPrice": 41.25,
+    "LaborHours": 26.86
+  },
+  {
+    "Offset": 21,
+    "Date": "2023-08-29T03:00:00-04:00",
+    "AverageTicketPrice": 17.51,
+    "LaborHours": 24.37
+  },
+  {
+    "Offset": 22,
+    "Date": "2023-08-29T02:00:00-04:00",
+    "AverageTicketPrice": 28.13,
+    "LaborHours": 27.34
+  },
+  {
+    "Offset": 23,
+    "Date": "2023-08-29T01:00:00-04:00",
+    "AverageTicketPrice": 32.24,
+    "LaborHours": 24.65
+  }
+]
