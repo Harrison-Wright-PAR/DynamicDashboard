@@ -6,7 +6,7 @@ import 'react-json-view-lite/dist/index.css';
 import HelloUser from './helloUser';
 import SalesReport from './salesReport';
 import SalesTrendReport from './salesTrendReport';
-import { Button, TextField, Box, Container, Grid } from '@mui/material';
+import { Button, TextField, Box, Container, Grid, getListItemSecondaryActionClassesUtilityClass } from '@mui/material';
 import { WidthProvider, Responsive } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
@@ -46,13 +46,13 @@ function StartPage() {
 
   const layout: Array<LayoutItem> = [
     { i: 'HelloUser', x: 0, y: 0, w: 6, h: 4 },
-    { i: 'SalesReport', x: 6, y: 0, w: 6, h: 4 },
-    { i: 'SalesTrendReport', x: 20, y: 4, w: 24, h: 16 },
-    { i: 'LaborCostReport', x: 0, y: 4, w: 12, h: 8 },
-    { i: 'LaborIrregularitiesReport', x: 12, y: 4, w: 8, h: 8 },
-    { i: 'LiveSalesReport', x: 0, y: 12, w: 12, h: 8 },
-    { i: 'MenuChangesReport', x: 12, y: 12, w: 8, h: 8 },
-    { i: 'SalesDailyReport', x: 20, y: 0, w: 12, h: 4 },
+    { i: 'SalesReport', x: 1, y: 1, w: 6, h: 4 },
+    { i: "SalesTrendReport", x: 2, y: 2, w: 7.7, h: 10.2 },
+    { i: "LaborCostReport", x: 3, y: 3, w: 11, h: 15 },
+    { i: 'LaborIrregularitiesReport', x: 4, y: 4, w: 9.1, h: 11.5 },
+    { i: 'LiveSalesReport', x: 5, y: 5, w: 4, h: 4 },
+    { i: 'MenuChangesReport', x: 6, y: 6, w: 8.5, h: 11.5 },
+    { i: "SalesDailyReport", x: 7, y: 7, w: 11, h: 15 },
   ];
 
   const handleButtonClick = async () => {
@@ -73,8 +73,8 @@ function StartPage() {
       if (defaultLayout == undefined) {
         defaultLayout = { i: x.name, x: 0, y: 0, w: 4, h: 4 };
       }
-      defaultLayout['x'] = i * 100;
-      defaultLayout['y'] = i * 100;
+      defaultLayout['x'] = i;
+      defaultLayout['y'] = i;
       x['layout'] = defaultLayout;
       console.log(x);
       return x;
@@ -95,36 +95,67 @@ function StartPage() {
   };
 
   const fetchComponentsLocal = async () => {
-    var sampleComponents = [
+    var sampleComponents : Component[] = [
       {
         goodFor: "all",
         id: 0,
-        layout: { i: "HelloUser", x: 0, y: 0, w: 6, h: 4 },
         name: "HelloUser",
         purpose: "greet the user",
       },
       {
-        goodFor: "sales, management, marketing, store operator, franchisee",
-        id: 1,
-        layout: { i: "SalesReport", x: 6, y: 0, w: 6, h: 4 },
-        name: "SalesReport",
-        purpose: "show the sales report",
-      },
-      {
         goodFor: "management, franchise owner, franchisee",
         id: 2,
-        layout: { i: "SalesTrendReport", x: 20, y: 4, w: 30, h: 10 },
         name: "SalesTrendReport",
         purpose: "show the sales trend for a single location",
       },
+      {
+        name: "LaborCostReport",
+        goodFor: "management, franchise owner, franchisee",
+        id: 3,
+        purpose: "show the labor cost for a single location",
+      },
+      {
+        name: "LaborIrregularitiesReport",
+        goodFor: "management, franchise owner, franchisee",
+        id: 4,
+        purpose: "show the labor irregularities for a single location",
+      },
+      {
+        name: "LiveSalesReport",
+        goodFor: "management, franchise owner, franchisee",
+        id: 5,
+        purpose: "show the live sales for a single location",
+      },
+      {
+        name: "MenuChangesReport",
+        goodFor: "management, franchise owner, franchisee",
+        id: 6,
+        purpose: "show the menu changes for a single location",
+      },
+      {
+        name: "SalesDailyReport",
+        goodFor: "management, franchise owner, franchisee",
+        id: 7,
+        purpose: "show the sales daily for a single location",
+      },
+      
     ];
+
+    sampleComponents = sampleComponents.map((component) => {
+      const layoutItem = layout.find((item) => item.i === component.name);
+      if (layoutItem) {
+        component.layout = layoutItem;
+      }
+      return component;
+    });
+  
     setComponents(sampleComponents);
   };
 
 
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="sm" sx={{ width:'100%'}}>
+      <Container maxWidth="sm" sx={{ width: '100%' }}>
         <Box className="MainApp" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '100%' }}>
           <Box sx={{ mt: 3 }}>
             <TextField sx={{ width: '400px' }} rows={3} label="Input Value" value={inputValue} multiline={true} onChange={(e) => setInputValue(e.target.value)} />
@@ -135,9 +166,11 @@ function StartPage() {
               <JsonView data={apiResponse} shouldInitiallyExpand={allExpanded} style={darkStyles} />
             </Box>
           )}
-          <Box sx={{ mt: 3, flexDirection: 'row' }}>
+          <Box sx={{ mt: 3, }}>
             <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponents()}>Fetch Components - AI</Button>
             <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponentsLocal()}>Fetch Components - Local</Button>
+          </Box>
+          <Box sx={{ mt: 3, }}>
 
             <ResponsiveGridLayout
               className="layout"

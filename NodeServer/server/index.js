@@ -13,7 +13,8 @@ const { StructuredOutputParser } = require("langchain/output_parsers");
 
 const llm = new OpenAI({
     openAIApiKey: process.env.OPENAI_API_KEY,
-    temperature: 0.5
+    temperature: 0.5,
+    modelName: "gpt-4"
 })
 
 
@@ -34,7 +35,12 @@ const createActionPrompt = `
 Given these components and sample dashboards, I'm a {role} and my areas of concern are mostly {problemAreas}. Could you suggest a dashboard that would fit my needs best?
 Please respond using only the components in the following list - {componentsAll}.
 Do not include any explanations, only provide a COMPLETE RFC8259 compliant JSON response following this format without deviation.
-
+{{"components": [{{
+    "name": "component_name",
+    "purpose": "the purpose of the component",
+    "goodFor": "the type of user this component is good for"
+  }}]}}
+  The JSON response:
 `
 
 const correctionPrompt = `
@@ -74,7 +80,7 @@ app.post('/components', async (req, res) => {
         llm,
         prompt: actionPromptTemplate,
         inputVariables: ["role", "problemAreas", "setupResult", "componentsAll"],
-        outputKey: "result"
+        outputKey: "components"
     });
     
     const correctionChain = new LLMChain({
@@ -85,7 +91,7 @@ app.post('/components', async (req, res) => {
     });
 
     const overallChain = new SequentialChain({
-        chains: [setupChain, actionChain, correctionChain],
+        chains: [setupChain, actionChain],
         inputVariables: ["componentsAll", "dashboardsExample", "role", "problemAreas"],
         verbose: true,
         outputVariables: ["components"]

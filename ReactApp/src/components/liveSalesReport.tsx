@@ -25,7 +25,7 @@ export default function LiveSalesReport() {
   }, []);
 
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 100 }}>
       <CardContent>
         <Typography variant="h5" sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
           Sales
