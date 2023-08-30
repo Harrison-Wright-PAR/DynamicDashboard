@@ -56,7 +56,13 @@ const correctionPrompt = `
 const updateActionPrompt = `
 Given these components and my current dashboard - {dashboard}, I'd like to make the following updates - {userRequest}. If you're able to make the update, please respond with the updated dashboard. If you're not able to make the update, please respond with a polite appology that you're not able to make the update.
 Please respond with JSON containing only the appology or using only the components in the following list - {componentsAll}.
-
+the output is should include all components from my dashboard with the updates I've requested and be RFC8259 compliant JSON.
+    {{"components": [{{
+        "name": "component_name",
+        "purpose": "the purpose of the component",
+        "goodFor": "the type of user this component is good for"
+      }}]}}
+      The JSON response:
 `
 app.post('/components', async (req, res) => {
 
