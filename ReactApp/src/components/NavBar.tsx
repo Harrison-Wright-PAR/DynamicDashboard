@@ -14,8 +14,11 @@ export default function NavBar() {
       <AppBar position="fixed"  sx= { { backgroundColor: '#0a3450' }}>
         <Toolbar>
             <Link to="/">
-                <img width='50px' height='50px' src="https://cdn.brinkpos.net/images/PAR-LOGO_White_2023.png" />
+                <img height='50px' src="https://cdn.brinkpos.net/images/PAR-LOGO_White_2023.png" />
             </Link>
+            <Typography variant="h4" component="div" sx={{ flexGrow: 1, margin: '15px' }}>
+              Board of Dreams
+            </Typography>
             <Button variant="text"  sx= { { my: 2, color: 'white', display: 'block' }} href="/examples">Examples </Button>
         </Toolbar>
       </AppBar>
