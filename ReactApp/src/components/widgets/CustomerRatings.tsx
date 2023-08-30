@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { PieChart, Pie, Cell, Legend } from "recharts";
+import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from "recharts";
 
 const data = [
   { name: "Rating 1", value: 100 },
@@ -39,22 +39,25 @@ const renderCustomizedLabel = ({
 };
 export default function CustomerRatings() {
   return (
-    <PieChart width={400} height={400}>
-      <Pie
-        data={data}
-        cx={200}
-        cy={200}
-        labelLine={false}
-        label={renderCustomizedLabel}
-        outerRadius={80}
-        fill="#8884d8"
-        dataKey="value"
-      >
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-        ))}
-      </Pie>
-      <Legend />
-    </PieChart>
+    <ResponsiveContainer width="100%" height="100%">
+
+      <PieChart width={400} height={400} margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
+        <Pie
+          data={data}
+          cx={200}
+          cy={200}
+          labelLine={false}
+          label={renderCustomizedLabel}
+          outerRadius={80}
+          fill="#8884d8"
+          dataKey="value"
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Legend />
+      </PieChart>
+    </ResponsiveContainer>
   );
 }

@@ -29,22 +29,9 @@ import LiveSalesReport from "./liveSalesReport";
 import MenuChangesReport from "./menuChangesReport";
 import SalesDailyReport from "./salesDailyReport";
 import LaborCostReport from "./laborCostReport";
-import { layout, LayoutItem } from "../gridLayouts";
+import { layout, LayoutItem, mapLayouts, componentMap } from "../utils";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-type ComponentMap = {
-  [key: string]: React.ComponentType<any>;
-};
-
-const componentMap: ComponentMap = {
-  HelloUser: HelloUser,
-  SalesTrendReport: SalesTrendReport,
-  LaborCostReport: LaborCostReport,
-  LaborIrregularitiesReport: LaborIrregularitiesReport,
-  LiveSalesReport: LiveSalesReport,
-  MenuChangesReport: MenuChangesReport,
-  SalesDailyReport: SalesDailyReport,
-};
 
 function StartPage() {
   const [inputValue, setInputValue] = useState("");
@@ -61,35 +48,11 @@ function StartPage() {
 
   const ResponsiveGridLayout = WidthProvider(Responsive);
 
-  const layout: Array<LayoutItem> = [
-    { i: "HelloUser", x: 0, y: 0, w: 6, h: 4 },
-    { i: "SalesTrendReport", x: 1, y: 1, w: 7.7, h: 10.2 },
-    { i: "LaborCostReport", x: 2, y: 2, w: 11, h: 15 },
-    { i: "LaborIrregularitiesReport", x: 3, y: 3, w: 9.1, h: 11.5 },
-    { i: "LiveSalesReport", x: 4, y: 4, w: 4, h: 4 },
-    { i: "MenuChangesReport", x: 5, y: 5, w: 8.5, h: 11.5 },
-    { i: "SalesDailyReport", x: 6, y: 6, w: 11, h: 15 },
-  ];
 
   const handleButtonClick = async () => {
     setApiResponse("Calling API...");
     const response = await api.generate(inputValue);
     setApiResponse(response);
-  };
-
-  const mapLayouts = (components: Component[], layout: LayoutItem[]) => {
-    return components.map((x: any, i: number) => {
-      x["id"] = i;
-      var defaultLayout = layout.find((item) => item.i === x.name);
-      if (defaultLayout == undefined) {
-        defaultLayout = { i: x.name, x: 0, y: 0, w: 4, h: 4 };
-      }
-      defaultLayout["x"] = i;
-      defaultLayout["y"] = i;
-      x["layout"] = defaultLayout;
-      console.log(x);
-      return x;
-    });
   };
 
   const fetchComponents = async () => {
