@@ -14,7 +14,7 @@ const columns: GridColDef[] = [
   },
 ];
 
-export default function DeviceHealth() {
+export default function DeviceHealthReport() {
   return (
     <Box sx={{ width: "700px" }}>
       <h1>Device Status</h1>

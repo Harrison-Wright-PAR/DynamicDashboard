@@ -38,7 +38,7 @@ const renderCustomizedLabel = ({
     </text>
   );
 };
-export default function CustomerRatings() {
+export default function CustomerRatingsReport() {
   return (
     <Box sx={{ width: "700px" }}>
       <h1>Customer Ratings</h1>

@@ -15,7 +15,7 @@ const columns: GridColDef[] = [
   { field: "col3", headerName: "Feedback", width: 200 },
 ];
 
-export default function CustomerFeedback() {
+export default function CustomerFeedbackReport() {
   return (
     <Box sx={{ width: "700px" }}>
       <h1>Customer Feedback</h1>

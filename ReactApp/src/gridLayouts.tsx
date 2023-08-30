@@ -19,7 +19,7 @@ export const layout: Array<LayoutItem> = [
     { i: "MenuChangesReport", x: 6, y: 6, w: 8.5, h: 11.5 },
     { i: "SalesDailyReport", x: 7, y: 7, w: 11, h: 15 },
     { i: "CustomerFeedback", x: 8, y: 8, w: 4, h: 4 },
-    { i: "CustomerRatings", x: 9, y: 9, w: 6, h: 8 },
+    { i: "CustomerRatings", x: 9, y: 9, w: 4, h: 10 },
     { i: "DeviceHealth", x: 10, y: 10, w: 4, h: 4 },
     { i: "TotalSales", x: 11, y: 11, w: 4, h: 4 },
   ];

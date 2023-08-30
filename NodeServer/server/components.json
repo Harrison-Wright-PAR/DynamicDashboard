@@ -5,12 +5,7 @@
         "goodFor": "all"
     },
     {
-        "name": "InventoryReport",
-        "purpose": "show the inventory report",
-        "goodFor": "management, store operator, franchisee"
-    },
-    {
-        "name": "LaborCostAnalysis",
+        "name": "LaborCostReport",
         "purpose": "show the labor cost analysis",
         "goodFor": "franchise owner, management"
     },
@@ -20,29 +15,14 @@
         "goodFor": "support, franchise owner, management"
     },
     {
-        "name": "SalesSummaryTotal",
-        "purpose": "show the sales summary for multiple locations along with some near-run trends",
-        "goodFor": "management, franchise owner, franchisee"
-    },
-    {
         "name": "SalesTrendReport",
         "purpose": "show the sales trend for a single location",
         "goodFor": "management, franchise owner, franchisee"
     },
     {
-        "name": "SalesTotalMultipleBrands",
-        "purpose": "show the sales summary for multiple brands",
-        "goodFor": "franchise owner"
-    },
-    {
         "name": "DeviceHealth",
         "purpose": "show the health of devices on a stack",
         "goodFor": "support, admin"
-    },
-    {
-        "name": "LaborCostReport",
-        "purpose": "show the labor cost report",
-        "goodFor": "management, franchise owner, franchisee"
     },
     {
         "name": "LaborIrregularitiesReport",
@@ -55,13 +35,18 @@
         "goodFor": "management, franchise owner, franchisee, admin"
     },
     {
-        "name": "MenuChangesReport",
-        "purpose": "show the menu changes report",
-        "goodFor": "management, franchise owner, franchisee, admin, support"
-    },
-    {
         "name": "SalesDailyReport",
         "purpose": "show the sales daily report",
         "goodFor": "sales, management, marketing, store operator, franchisee, franchise owner"
+    },
+    {
+        "name": "CustomerFeedbackReport",
+        "purpose": "show the customer feedback report",
+        "goodFor": "management, marketing, store operator, franchisee, franchise owner"
+    },
+    {
+        "name": "CustomerRatingsReport",
+        "purpose": "show the customer ratings report",
+        "goodFor": "management, marketing, store operator, franchisee, franchise owner"
     }
 ]
