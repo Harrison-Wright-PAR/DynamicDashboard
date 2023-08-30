@@ -19,7 +19,7 @@ export default class Api {
     public async fetchComponents(userInput: string = "") {
         try {
             const components = await fetch("/components", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ role: 'manager', problemAreas: 'sales, labor' }) });
-            console.log(components);
+            console.log(components);    
             return components.json();
         } catch (error: any) {
             console.error(error);
