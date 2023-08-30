@@ -7,7 +7,7 @@ const columns: GridColDef[] = [
   {
     field: 'Name',
     headerName: 'Change Name',
-    width: 250,
+    width: 400,
     editable: false,
   },
   {
@@ -57,8 +57,8 @@ export default function MenuChangesReport() {
   if (error) return <div>Error: {error.message}</div>;
 
 return (
-  <Box sx={{ width: '100%' }}>
-    <Typography variant="h4" gutterBottom>Menu Changes</Typography>
+  <Box sx={{ width: '700px' }}>
+    <h1>Menu Changes</h1>
     <DataGrid
       getRowId={(row) => row.Id}
       rows={data}
@@ -66,11 +66,11 @@ return (
       initialState={{
         pagination: {
           paginationModel: {
-            pageSize: 5,
+            pageSize: 7,
           },
         },
       }}
-      pageSizeOptions={[5]}
+      pageSizeOptions={[7]}
       disableRowSelectionOnClick
     />
   </Box>

@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from "recharts";
+import Box from "@mui/material/Box";
 
 const data = [
   { name: "Rating 1", value: 100 },
@@ -39,16 +40,14 @@ const renderCustomizedLabel = ({
 };
 export default function CustomerRatings() {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-
-      <PieChart width={400} height={400} margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
+    <Box sx={{ width: "700px" }}>
+      <h1>Customer Ratings</h1>
+      <PieChart width={600} height={600}>
         <Pie
           data={data}
-          cx={200}
-          cy={200}
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={80}
+          outerRadius={200}
           fill="#8884d8"
           dataKey="value"
         >
@@ -58,6 +57,6 @@ export default function CustomerRatings() {
         </Pie>
         <Legend />
       </PieChart>
-    </ResponsiveContainer>
+    </Box>
   );
 }

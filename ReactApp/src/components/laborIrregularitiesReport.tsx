@@ -64,7 +64,7 @@ export default function LaborIrregularitiesReport() {
 
 return (
   <Box sx={{ width: '700px' }}>
-    <Typography variant="h4" gutterBottom>Labor Irregularities</Typography>
+    <h1>Labor Irregularities</h1>
     <DataGrid
       getRowId={(row) => row.Id}
       rows={data}
@@ -72,11 +72,11 @@ return (
       initialState={{
         pagination: {
           paginationModel: {
-            pageSize: 5,
+            pageSize: 7,
           },
         },
       }}
-      pageSizeOptions={[5]}
+      pageSizeOptions={[7]}
       disableRowSelectionOnClick
     />
   </Box>

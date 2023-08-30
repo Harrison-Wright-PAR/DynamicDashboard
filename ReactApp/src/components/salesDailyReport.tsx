@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Box from '@mui/material/Box';
 
 export default function SalesDailyReport() {
     const [data, setData] = useState([]);
@@ -31,10 +32,10 @@ export default function SalesDailyReport() {
     if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <Box>
       <h1>Sales Daily - Past 90 Days</h1>
         <LineChart
-          width={800}
+          width={700}
           height={500}
           data={data}
           margin={{
@@ -51,6 +52,6 @@ export default function SalesDailyReport() {
           <Line yAxisId="left" type="monotone" dataKey="SalesTotal" stroke="#8884d8" activeDot={{ r: 8 }} label="Sales" />
           <Line  yAxisId="right" type="monotone" dataKey="LaborHours" stroke="#82ca9d" label="Labor" />
         </LineChart>
-    </div>
+    </Box>
   );
 }

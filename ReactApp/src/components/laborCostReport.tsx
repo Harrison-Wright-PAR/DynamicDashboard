@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ComposedChart, Bar, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import Box from '@mui/material/Box';
 
 export default function LaborCostReport() {
     const [data, setData] = useState([]);
@@ -31,10 +32,10 @@ export default function LaborCostReport() {
     if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <Box>
       <h1>Labor Analysis - Past 2 Weeks</h1>
         <ComposedChart
-          width={800}
+          width={700}
           height={500}
           data={data}
           margin={{
@@ -52,6 +53,6 @@ export default function LaborCostReport() {
           <Bar name="Actual Hours" dataKey="ActualHours" fill="#413ea0"/>
           {/* <Line type="monotone" dataKey="TargetHours" stroke="#ff7300" /> */}
         </ComposedChart>
-    </div>
+    </Box>
   );
 }

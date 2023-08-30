@@ -257,7 +257,7 @@ function StartPage() {
                 if (Component) {
                   return (
                     <Card
-                      sx={{ m: 2, p: 10 }}
+                      sx={{ m: 2, p: 5 }}
                       key={component.id}
                       data-grid={{ ...component.layout }}
                     >

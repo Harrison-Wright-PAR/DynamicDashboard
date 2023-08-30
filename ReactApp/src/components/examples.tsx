@@ -71,12 +71,12 @@ export default function Examples() {
       id: 10,
       purpose: "show the device health for a single location",
     },
-    {
-      name: "TotalSales",
-      goodFor: "management, franchise owner, franchisee",
-      id: 11,
-      purpose: "show the total sales for a single location",
-    },
+    // {
+    //   name: "TotalSales",
+    //   goodFor: "management, franchise owner, franchisee",
+    //   id: 11,
+    //   purpose: "show the total sales for a single location",
+    // },
   
   ];
 
@@ -101,7 +101,7 @@ export default function Examples() {
             if (Component) {
               return (
                 <Card
-                  sx={{ m: 2, p: 10 }}
+                  sx={{ m: 2, p: 5 }}
                   key={component.id}
                   data-grid={{ ...component.layout }}
                 >
