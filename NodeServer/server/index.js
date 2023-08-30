@@ -88,7 +88,7 @@ app.post('/components', async (req, res) => {
         inputVariables: ["userInput", "setupResult", "componentsAll"],
         outputKey: "components"
     });
-    
+
     const correctionChain = new LLMChain({
         llm,
         prompt: correctionPromptTemplate,
@@ -164,11 +164,16 @@ app.post('/components/update', async (req, res) => {
     console.log(result);
 
     try {
-        let parse = JSON.parse(result['result']);
-        res.send({ components: parse['components'] });
+        let parse = '';
+        if (result['result']) {
+            parse = JSON.parse(result['result']);
+        } else {
+            parse = JSON.parse(result);
+        }
+        res.send(parse);
     } catch (error) {
         if (error instanceof SyntaxError) {
-            res.send({ message: result });
+            res.send(parse);
         } else {
             console.error(error);
             res.status(500).send({ error });

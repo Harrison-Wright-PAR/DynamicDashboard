@@ -2,7 +2,7 @@
     {
         "name": "HelloUser",
         "purpose": "greet the user",
-        "goodFor": "all"
+        "goodFor": "everyone"
     },
     {
         "name": "LaborCostReport",
@@ -11,7 +11,7 @@
     },
     {
         "name": "MenuChangesReport",
-        "purpose": "show the menu changes",
+        "purpose": "show the menu changes, changset",
         "goodFor": "support, franchise owner, management"
     },
     {
@@ -20,7 +20,7 @@
         "goodFor": "management, franchise owner, franchisee"
     },
     {
-        "name": "DeviceHealth",
+        "name": "DeviceHealthReport",
         "purpose": "show the health of devices on a stack",
         "goodFor": "support, admin"
     },

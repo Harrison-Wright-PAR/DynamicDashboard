@@ -8,7 +8,6 @@ import SalesTrendReport from "./components/salesTrendReport";
 import CustomerFeedbackReport from "./components/widgets/CustomerFeedback";
 import CustomerRatingsReport from "./components/widgets/CustomerRatings";
 import DeviceHealthReport from "./components/widgets/DeviceHealth";
-import TotalSales from "./components/widgets/TotalSales";
 
 export const layout: Array<LayoutItem> = [
     { i: "HelloUser", x: 0, y: 0, w: 6, h: 4 },
@@ -18,10 +17,9 @@ export const layout: Array<LayoutItem> = [
     { i: "LiveSalesReport", x: 5, y: 5, w: 4, h: 4 },
     { i: "MenuChangesReport", x: 6, y: 6, w: 8.5, h: 11.5 },
     { i: "SalesDailyReport", x: 7, y: 7, w: 11, h: 15 },
-    { i: "CustomerFeedback", x: 8, y: 8, w: 4, h: 4 },
-    { i: "CustomerRatings", x: 9, y: 9, w: 6, h: 8 },
-    { i: "DeviceHealth", x: 10, y: 10, w: 4, h: 4 },
-    { i: "TotalSales", x: 11, y: 11, w: 4, h: 4 },
+    { i: "CustomerFeedbackReport", x: 8, y: 8, w: 4, h: 4 },
+    { i: "CustomerRatingsReport", x: 9, y: 9, w: 6, h: 8 },
+    { i: "DeviceHealthReport", x: 10, y: 10, w: 4, h: 4 },
   ];
 
   
@@ -45,10 +43,9 @@ export const componentMap: ComponentMap = {
   LiveSalesReport: LiveSalesReport,
   MenuChangesReport: MenuChangesReport,
   SalesDailyReport: SalesDailyReport,
-  CustomerFeedback: CustomerFeedbackReport,
-  CustomerRatings: CustomerRatingsReport,
-  DeviceHealth: DeviceHealthReport,
-  TotalSales: TotalSales
+  CustomerFeedbackReport: CustomerFeedbackReport,
+  CustomerRatingsReport: CustomerRatingsReport,
+  DeviceHealthReport: DeviceHealthReport,
 };
 
 

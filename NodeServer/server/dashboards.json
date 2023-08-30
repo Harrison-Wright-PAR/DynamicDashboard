@@ -1,7 +1,12 @@
 [
     {
-        "role": "manager",
+        "userInput": "I'm a manager, mostly interested in day to day operations",
         "components": [
+            {
+                "name": "HelloUser",
+                "purpose": "show the user name",
+                "goodFor": "everyone"
+            },
             {
                 "name": "SalesDailyReport",
                 "purpose": "show the sales report",
@@ -35,8 +40,13 @@
         ]
     },
     {
-        "role": "franchisee",
+        "userInput": "franchisee",
         "components": [
+            {
+                "name": "HelloUser",
+                "purpose": "show the user name",
+                "goodFor": "everyone"
+            },
             {
                 "name": "SalesSummaryTotal",
                 "purpose": "show the sales summary for multiple locations along with some near-run trends",

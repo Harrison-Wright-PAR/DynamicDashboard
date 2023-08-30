@@ -54,19 +54,19 @@ export default function Examples() {
       purpose: "show the sales daily for a single location",
     },
     {
-      name: "CustomerFeedback",
+      name: "CustomerFeedbackReport",
       goodFor: "management, franchise owner, franchisee",
       id: 8,
       purpose: "show the customer feedback for a single location",
     },
     {
-      name: "CustomerRatings",
+      name: "CustomerRatingsReport",
       goodFor: "management, franchise owner, franchisee",
       id: 9,
       purpose: "show the customer ratings for a single location",
     },
     {
-      name: "DeviceHealth",
+      name: "DeviceHealthReport",
       goodFor: "management, franchise owner, franchisee",
       id: 10,
       purpose: "show the device health for a single location",

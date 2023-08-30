@@ -4,7 +4,6 @@ import Api from "../services/openAIApi";
 import { JsonView, allExpanded, darkStyles } from "react-json-view-lite";
 import "react-json-view-lite/dist/index.css";
 import HelloUser from "./helloUser";
-import SalesTrendReport from "./salesTrendReport";
 import {
   Button,
   TextField,
@@ -24,12 +23,6 @@ import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
-import { Start } from "@mui/icons-material";
-import LaborIrregularitiesReport from "./laborIrregularitiesReport";
-import LiveSalesReport from "./liveSalesReport";
-import MenuChangesReport from "./menuChangesReport";
-import SalesDailyReport from "./salesDailyReport";
-import LaborCostReport from "./laborCostReport";
 import { layout, LayoutItem, mapLayouts, componentMap } from "../utils";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
@@ -37,7 +30,7 @@ function StartPage() {
   const [inputValue, setInputValue] = useState("");
   const [apiResponse, setApiResponse] = useState("");
   const [components, setComponents] = useState<Component[]>([]);
-  const [dashboard, setDashboard] = useState("");
+  const [dashboard, setDashboard] = useState<Component[]>([]);
   const [userRequest, setUserRequest] = useState("");
   const [loading, setLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState(
@@ -59,7 +52,7 @@ function StartPage() {
     setApiResponse("Calling API...");
     const response = await api.fetchComponents(inputValue);
     console.log(response);
-    var components = response["components"];
+    var components: Component[] = response["components"];
     components = components.filter((x: any) => x["name"] in componentMap);
     components = components.map((x: any, i: number) => {
       x["id"] = i;
@@ -73,8 +66,16 @@ function StartPage() {
       console.log(x);
       return x;
     });
-    setComponents(response["components"]);
-    setDashboard(response["components"]);
+    if (!components.find((x: Component) => x.name == "HelloUser")) {
+      components.unshift({
+        goodFor: "all",
+        id: -1,
+        name: "HelloUser",
+        purpose: "greet the user",
+      });
+    }
+    setComponents(components);
+    setDashboard(components);
     setDashboardGenerated(true);
     setApiResponse(response);
     setLoading(false);
@@ -85,77 +86,34 @@ function StartPage() {
     setLoadingMessage(
       "If you wait for it, it will come... Crafting your Board of Dreams now! 🌟📊"
     );
-    var res = await api.updateDashboard(dashboard, userRequest);
+    var res = await api.updateDashboard(JSON.stringify(dashboard), userRequest);
     console.log(res);
-    var components = res["components"];
+    var components = new Array<Component>();
+
+    if (res['components']) {
+      components = res['components'];
+    } else {
+      components = res;
+    }
 
     components = components.filter((x: any) => x["name"] in componentMap);
-    components = mapLayouts(components, layout);
-
-    if (res["components"]) {
-      setComponents(res["components"]);
+    if (!components.find((x: Component) => x.name == "HelloUser")) {
+      components.unshift({
+        goodFor: "all",
+        id: -1,
+        name: "HelloUser",
+        purpose: "greet the user",
+      });
     }
+
+
+    components = mapLayouts(components, layout);
+    setComponents(components);
 
     setApiResponse(res);
     setLoading(false);
   };
 
-  const fetchComponentsLocal = async () => {
-    var sampleComponents: Component[] = [
-      {
-        goodFor: "all",
-        id: 0,
-        name: "HelloUser",
-        purpose: "greet the user",
-      },
-      {
-        goodFor: "management, franchise owner, franchisee",
-        id: 2,
-        name: "SalesTrendReport",
-        purpose: "show the sales trend for a single location",
-      },
-      {
-        name: "LaborCostReport",
-        goodFor: "management, franchise owner, franchisee",
-        id: 3,
-        purpose: "show the labor cost for a single location",
-      },
-      {
-        name: "LaborIrregularitiesReport",
-        goodFor: "management, franchise owner, franchisee",
-        id: 4,
-        purpose: "show the labor irregularities for a single location",
-      },
-      {
-        name: "LiveSalesReport",
-        goodFor: "management, franchise owner, franchisee",
-        id: 5,
-        purpose: "show the live sales for a single location",
-      },
-      {
-        name: "MenuChangesReport",
-        goodFor: "management, franchise owner, franchisee",
-        id: 6,
-        purpose: "show the menu changes for a single location",
-      },
-      {
-        name: "SalesDailyReport",
-        goodFor: "management, franchise owner, franchisee",
-        id: 7,
-        purpose: "show the sales daily for a single location",
-      },
-    ];
-
-    sampleComponents = sampleComponents.map((component) => {
-      const layoutItem = layout.find((item) => item.i === component.name);
-      if (layoutItem) {
-        component.layout = layoutItem;
-      }
-      return component;
-    });
-
-    setComponents(sampleComponents);
-  };
 
   useEffect(() => {
     const timeoutId1 = setTimeout(() => {
@@ -232,12 +190,6 @@ function StartPage() {
             </Box>
           </Container>
         )}
-        {loading && (
-          <Container maxWidth="xl" sx={{ mt: 10, width: "100%" }}>
-            <Typography variant="body1">{loadingMessage}</Typography>
-            <LinearProgress />
-          </Container>
-        )}
         {/* <Box sx={{ mt: 3, }}>
           <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponents()}>Fetch Components - AI</Button>
           <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponentsLocal()}>Fetch Components - Local</Button>
@@ -250,27 +202,27 @@ function StartPage() {
               width: "100%",
               justifyContent: "center"
             }}>
-            {components &&
-              components.length > 0 &&
-              components.map((component: any) => {
-                const Component = componentMap[component["name"]];
-                if (Component) {
-                  return (
-                    <Card
-                      sx={{ m: 2, p: 5 }}
-                      key={component.id}
-                      data-grid={{ ...component.layout }}
-                    >
-                      <Component />
-                    </Card>
-                  );
-                } else {
-                  console.error(
-                    `Component with name ${component["name"]} not found in componentMap`
-                  );
-                  return null;
-                }
-              })}
+              {components &&
+                components.length > 0 &&
+                components.map((component: any) => {
+                  const Component = componentMap[component["name"]];
+                  if (Component) {
+                    return (
+                      <Card
+                        sx={{ m: 2, p: 5 }}
+                        key={component.id}
+                        data-grid={{ ...component.layout }}
+                      >
+                        <Component />
+                      </Card>
+                    );
+                  } else {
+                    console.error(
+                      `Component with name ${component["name"]} not found in componentMap`
+                    );
+                    return null;
+                  }
+                })}
             </Box>
             <Container maxWidth="sm" sx={{ mt: 3, width: "100%" }}>
               <Typography variant="body1">
@@ -299,23 +251,34 @@ function StartPage() {
                 </Box>
               </Box>
             </Container>
-            <Box sx={{ mt: 20 }}>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography>Developer Tools</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <JsonView
-                    data={apiResponse}
-                    shouldInitiallyExpand={allExpanded}
-                  />
-                </AccordionDetails>
-              </Accordion>
-            </Box>
+
+
+          </Box>
+        )}
+        {loading && (
+          <Container maxWidth="xl" sx={{ mt: 10, width: "100%" }}>
+            <Typography variant="body1">{loadingMessage}</Typography>
+            <LinearProgress />
+          </Container>
+        )}
+
+        {dashboardGenerated && (
+          <Box sx={{ mt: 20 }}>
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Developer Tools</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <JsonView
+                  data={apiResponse}
+                  shouldInitiallyExpand={allExpanded}
+                />
+              </AccordionDetails>
+            </Accordion>
           </Box>
         )}
       </Box>
