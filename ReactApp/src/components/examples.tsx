@@ -91,6 +91,7 @@ export default function Examples() {
           display: "flex",
           flexWrap: "wrap",
           width: "100%",
+          justifyContent: "center"
         }}
       >
         {components &&

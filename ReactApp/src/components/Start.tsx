@@ -248,6 +248,7 @@ function StartPage() {
               display: "flex",
               flexWrap: "wrap",
               width: "100%",
+              justifyContent: "center"
             }}>
             {components &&
               components.length > 0 &&
