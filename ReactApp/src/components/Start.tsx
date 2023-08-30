@@ -27,6 +27,7 @@ import LiveSalesReport from "./liveSalesReport";
 import MenuChangesReport from "./menuChangesReport";
 import SalesDailyReport from "./salesDailyReport";
 import LaborCostReport from "./laborCostReport";
+import { layout, LayoutItem } from "../gridLayouts";
 
 type ComponentMap = {
   [key: string]: React.ComponentType<any>;
@@ -73,10 +74,25 @@ function StartPage() {
     setApiResponse(response);
   };
 
+  const mapLayouts = (components: Component[], layout: LayoutItem[]) => {
+    return components.map((x: any, i: number) => {
+      x["id"] = i;
+      var defaultLayout = layout.find((item) => item.i === x.name);
+      if (defaultLayout == undefined) {
+        defaultLayout = { i: x.name, x: 0, y: 0, w: 4, h: 4 };
+      }
+      defaultLayout["x"] = i;
+      defaultLayout["y"] = i;
+      x["layout"] = defaultLayout;
+      console.log(x);
+      return x;
+    });
+  };
+
   const fetchComponents = async () => {
     setLoading(true);
     setApiResponse("Calling API...");
-    const response = await api.fetchComponents();
+    const response = await api.fetchComponents(inputValue);
     console.log(response);
     var components = response["components"];
     components = components.filter((x: any) => x["name"] in componentMap);
@@ -98,9 +114,14 @@ function StartPage() {
     setApiResponse(response);
     setLoading(false);
   };
+
   const updateDashboard = async () => {
     var res = await api.updateDashboard(dashboard, userRequest);
     console.log(res);
+    var components = res["components"];
+
+    components = components.filter((x: any) => x["name"] in componentMap);
+    components = mapLayouts(components, layout);
 
     if (res["components"]) {
       setComponents(res["components"]);
@@ -331,14 +352,6 @@ interface Component {
   layout?: { i: string; x: number; y: number; w: number; h: number };
   name: string;
   purpose: string;
-}
-
-interface LayoutItem {
-  i: string;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
 }
 
 export default StartPage;
