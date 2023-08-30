@@ -5,6 +5,8 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import TotalSales from './widgets/TotalSales';
 import DeviceHealth from './widgets/DeviceHealth';
+import CustomerRatings from './widgets/CustomerRatings'
+import CustomerFeedback from './widgets/CustomerFeedback'
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -27,10 +29,10 @@ export default function Examples() {
           <Item><DeviceHealth></DeviceHealth></Item>
         </Grid>
         <Grid item xs={6}>
-          <Item>3</Item>
+          <Item><CustomerRatings></CustomerRatings></Item>
         </Grid>
         <Grid item xs={6}>
-          <Item>4</Item>
+          <Item><CustomerFeedback></CustomerFeedback></Item>
         </Grid>
       </Grid>
     </Box>
