@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Api from "../services/openAIApi";
 //import './App.css';
 import { JsonView, allExpanded, darkStyles } from "react-json-view-lite";
@@ -14,6 +14,7 @@ import {
   Grid,
   getListItemSecondaryActionClassesUtilityClass,
   Typography,
+  LinearProgress
 } from "@mui/material";
 import { WidthProvider, Responsive } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
@@ -26,7 +27,6 @@ import LiveSalesReport from "./liveSalesReport";
 import MenuChangesReport from "./menuChangesReport";
 import SalesDailyReport from "./salesDailyReport";
 import LaborCostReport from "./laborCostReport";
-import { layout, LayoutItem } from "../gridLayouts";
 
 type ComponentMap = {
   [key: string]: React.ComponentType<any>;
@@ -49,11 +49,23 @@ function StartPage() {
   const [components, setComponents] = useState<Component[]>([]);
   const [dashboard, setDashboard] = useState("");
   const [userRequest, setUserRequest] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState("If you wait for it, it will come... Crafting your Board of Dreams now! 🌟📊");
+  const [dashboardGenerated, setDashboardGenerated] = useState(false);
   const api = new Api();
 
   const ResponsiveGridLayout = WidthProvider(Responsive);
 
-
+  const layout: Array<LayoutItem> = [
+    { i: "HelloUser", x: 0, y: 0, w: 6, h: 4 },
+    { i: "SalesReport", x: 1, y: 1, w: 6, h: 4 },
+    { i: "SalesTrendReport", x: 2, y: 2, w: 7.7, h: 10.2 },
+    { i: "LaborCostReport", x: 3, y: 3, w: 11, h: 15 },
+    { i: "LaborIrregularitiesReport", x: 4, y: 4, w: 9.1, h: 11.5 },
+    { i: "LiveSalesReport", x: 5, y: 5, w: 4, h: 4 },
+    { i: "MenuChangesReport", x: 6, y: 6, w: 8.5, h: 11.5 },
+    { i: "SalesDailyReport", x: 7, y: 7, w: 11, h: 15 },
+  ];
 
   const handleButtonClick = async () => {
     setApiResponse("Calling API...");
@@ -61,8 +73,14 @@ function StartPage() {
     setApiResponse(response);
   };
 
-  const mapLayouts = (components: Component[], layout: LayoutItem[]) => {
-    return components.map((x: any, i: number) => {
+  const fetchComponents = async () => {
+    setLoading(true);
+    setApiResponse("Calling API...");
+    const response = await api.fetchComponents();
+    console.log(response);
+    var components = response["components"];
+    components = components.filter((x: any) => x["name"] in componentMap);
+    components = components.map((x: any, i: number) => {
       x["id"] = i;
       var defaultLayout = layout.find((item) => item.i === x.name);
       if (defaultLayout == undefined) {
@@ -74,26 +92,15 @@ function StartPage() {
       console.log(x);
       return x;
     });
-  };
-
-  const fetchComponents = async () => {
-    setApiResponse("Calling API...");
-    const response = await api.fetchComponents(inputValue);
-    console.log(response);
-    var components = response["components"];
-    components = components.filter((x: any) => x["name"] in componentMap);
-    components = mapLayouts(components, layout);
     setComponents(response["components"]);
     setDashboard(response["components"]);
+    setDashboardGenerated(true);
     setApiResponse(response);
+    setLoading(false);
   };
   const updateDashboard = async () => {
     var res = await api.updateDashboard(dashboard, userRequest);
     console.log(res);
-    var components = res["components"];
-
-    components = components.filter((x: any) => x["name"] in componentMap);
-    components = mapLayouts(components, layout);
 
     if (res["components"]) {
       setComponents(res["components"]);
@@ -159,9 +166,23 @@ function StartPage() {
     setComponents(sampleComponents);
   };
 
+  useEffect(() => {
+    const timeoutId1 = setTimeout(() => {
+      setLoadingMessage("Good boards come to those who wait...🙇‍♂️📈");
+  
+      const timeoutId2 = setTimeout(() => {
+        setLoadingMessage("“I don’t always load, but when I do - it takes just a minute. 😎🏖️” - Most interesting board in the world");
+      }, 20000); // change the message after another 20 seconds (20000 milliseconds)
+  
+      return () => clearTimeout(timeoutId2);
+    }, 20000); // change the message after 20 seconds (20000 milliseconds)
+  
+    return () => clearTimeout(timeoutId1);
+  }, []); // run the effect only once, when the component mounts
+
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="sm" sx={{ width: "100%" }}>
+      <Container maxWidth="xl">
         <Box
           className="MainApp"
           sx={{
@@ -172,6 +193,8 @@ function StartPage() {
             height: "100%",
           }}
         >
+          {!dashboardGenerated && (
+            <div>
           <Box sx={{ mt: 3, alignItems: "left" }}>
             <Typography
               variant="h4"
@@ -206,18 +229,28 @@ function StartPage() {
               <Button
                 color="parBlue"
                 variant="contained"
+                disabled={loading}
                 onClick={fetchComponents}
               >
                 Next
               </Button>
             </Box>
           </Box>
+          </div>
+          )}
+          {loading && (
+            <Box sx={{ mt: 10, width: '100%' }}>
+              <Typography variant="body1">{loadingMessage}</Typography>
+              <LinearProgress />
+            </Box>
+          )}
           {/* <Box sx={{ mt: 3, }}>
             <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponents()}>Fetch Components - AI</Button>
             <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponentsLocal()}>Fetch Components - Local</Button>
           </Box> */}
-          {apiResponse && (
-            <Box sx={{ mt: 3 }}>
+          {dashboardGenerated && (
+            <div>
+            <Box sx={{ mt: 3, width: '100%' }}>
               <ResponsiveGridLayout
                 className="layout"
                 layouts={{ lg: layout }}
@@ -247,8 +280,6 @@ function StartPage() {
                   })}
               </ResponsiveGridLayout>
             </Box>
-          )}
-          {apiResponse && (
             <Box sx={{ mt: 3, width: "100%" }}>
               <Typography variant="body1">
                 Not happy with the dashboard? Request updates and regenerate the
@@ -279,8 +310,6 @@ function StartPage() {
                 </Box>
               </Box>
             </Box>
-          )}
-          {apiResponse && (
             <Box sx={{ mt: 3 }}>
               <JsonView
                 data={apiResponse}
@@ -288,6 +317,7 @@ function StartPage() {
                 style={darkStyles}
               />
             </Box>
+            </div>
           )}
         </Box>
       </Container>
@@ -303,5 +333,12 @@ interface Component {
   purpose: string;
 }
 
+interface LayoutItem {
+  i: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
 
 export default StartPage;
