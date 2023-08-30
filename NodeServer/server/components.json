@@ -5,11 +5,6 @@
         "goodFor": "all"
     },
     {
-        "name": "SalesReport",
-        "purpose": "show the sales report",
-        "goodFor": "sales, management, marketing, store operator, franchisee"
-    },
-    {
         "name": "InventoryReport",
         "purpose": "show the inventory report",
         "goodFor": "management, store operator, franchisee"
@@ -67,6 +62,6 @@
     {
         "name": "SalesDailyReport",
         "purpose": "show the sales daily report",
-        "goodFor": "management, franchise owner, franchisee"
+        "goodFor": "sales, management, marketing, store operator, franchisee, franchise owner"
     }
 ]

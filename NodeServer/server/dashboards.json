@@ -3,7 +3,7 @@
         "role": "manager",
         "components": [
             {
-                "name": "SalesReport",
+                "name": "SalesDailyReport",
                 "purpose": "show the sales report",
                 "goodFor": "sales, management, marketing, store operator, franchisee"
             },
@@ -48,7 +48,7 @@
                 "goodFor": "management, franchise owner, franchisee"
             },
             {
-                "name": "SalesReport",
+                "name": "SalesDailyReport",
                 "purpose": "show the sales report",
                 "goodFor": "sales, management, marketing, store operator, franchisee"
             },

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container } from "@mui/material";
+import { Box, Card, Container } from "@mui/material";
 import { WidthProvider, Responsive } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
@@ -85,49 +85,36 @@ export default function Examples() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="sm" sx={{ width: "100%" }}>
-        <Box
-          className="MainApp"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "100%",
-            height: "100vh",
-          }}
-        >
-          <Box sx={{ mt: 3 }}>
-            <ResponsiveGridLayout
-              className="layout"
-              layouts={{ lg: layout }}
-              breakpoints={{ lg: 2400 }}
-              cols={{ lg: 16 }}
-              rowHeight={30}
-            >
-              {components &&
-                components.length > 0 &&
-                components.map((component: any) => {
-                  const Component = componentMap[component["name"]];
-                  if (Component) {
-                    return (
-                      <div
-                        key={component.id}
-                        data-grid={{ ...component.layout }}
-                      >
-                        <Component />
-                      </div>
-                    );
-                  } else {
-                    console.error(
-                      `Component with name ${component["name"]} not found in componentMap`
-                    );
-                    return null;
-                  }
-                })}
-            </ResponsiveGridLayout>
-          </Box>
-        </Box>
-      </Container>
+      <Box
+        className="MainApp"
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          width: "100%",
+        }}
+      >
+        {components &&
+          components.length > 0 &&
+          components.map((component: any) => {
+            const Component = componentMap[component["name"]];
+            if (Component) {
+              return (
+                <Card
+                  sx={{ m: 2, p: 10 }}
+                  key={component.id}
+                  data-grid={{ ...component.layout }}
+                >
+                  <Component />
+                </Card>
+              );
+            } else {
+              console.error(
+                `Component with name ${component["name"]} not found in componentMap`
+              );
+              return null;
+            }
+          })}
+      </Box>
     </ThemeProvider>
   );
 }

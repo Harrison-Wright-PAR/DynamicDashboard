@@ -17,6 +17,7 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Card,
 } from "@mui/material";
 import { WidthProvider, Responsive } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
@@ -32,7 +33,6 @@ import LaborCostReport from "./laborCostReport";
 import { layout, LayoutItem, mapLayouts, componentMap } from "../utils";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-
 function StartPage() {
   const [inputValue, setInputValue] = useState("");
   const [apiResponse, setApiResponse] = useState("");
@@ -47,7 +47,6 @@ function StartPage() {
   const api = new Api();
 
   const ResponsiveGridLayout = WidthProvider(Responsive);
-
 
   const handleButtonClick = async () => {
     setApiResponse("Calling API...");
@@ -83,7 +82,9 @@ function StartPage() {
 
   const updateDashboard = async () => {
     setLoading(true);
-    setLoadingMessage("If you wait for it, it will come... Crafting your Board of Dreams now! 🌟📊");
+    setLoadingMessage(
+      "If you wait for it, it will come... Crafting your Board of Dreams now! 🌟📊"
+    );
     var res = await api.updateDashboard(dashboard, userRequest);
     console.log(res);
     var components = res["components"];
@@ -174,156 +175,149 @@ function StartPage() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="xl">
-        <Box
-          className="MainApp"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          {!dashboardGenerated && (
-            <div>
-              <Box sx={{ mt: 3, alignItems: "left" }}>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: "parBlue",
-                    fontWeight: "bold",
-                    marginBottom: "10px",
-                  }}
+      <Box
+        className="MainApp"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
+          justifyContent: "flex-start",
+          alignContent: "flex-start",
+        }}
+      >
+        {!dashboardGenerated && (
+          <Container maxWidth="sm" sx={{ mt: "8%" }}>
+            <Box sx={{ mt: 3, alignItems: "left" }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  color: "parBlue",
+                  fontWeight: "bold",
+                  marginBottom: "10px",
+                }}
+              >
+                Welcome to the Board of Dreams!
+              </Typography>
+              <Typography variant="body1">
+                Tell us what you need to see to manage your brand in plain
+                english!
+              </Typography>
+              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                (Example: I need to be able to quickly see sales and labor, top
+                items sold, and device health.)
+              </Typography>
+            </Box>
+            <Box sx={{ mt: 3, width: "100%" }}>
+              {" "}
+              {/* add the Box component and set the flexDirection property */}
+              <TextField
+                sx={{ width: "100%", marginBottom: "10px" }}
+                rows={3}
+                value={inputValue}
+                multiline={true}
+                onChange={(e) => setInputValue(e.target.value)}
+              />
+              <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                <Button
+                  color="parBlue"
+                  variant="contained"
+                  disabled={loading}
+                  onClick={fetchComponents}
                 >
-                  Welcome to the Board of Dreams!
-                </Typography>
-                <Typography variant="body1">
-                  Tell us what you need to see to manage your brand in plain
-                  english!
-                </Typography>
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  (Example: I need to be able to quickly see sales and labor,
-                  top items sold, and device health.)
-                </Typography>
+                  Next
+                </Button>
               </Box>
-              <Box sx={{ mt: 3, width: "100%" }}>
+            </Box>
+          </Container>
+        )}
+        {loading && (
+          <Container maxWidth="xl" sx={{ mt: 10, width: "100%" }}>
+            <Typography variant="body1">{loadingMessage}</Typography>
+            <LinearProgress />
+          </Container>
+        )}
+        {/* <Box sx={{ mt: 3, }}>
+          <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponents()}>Fetch Components - AI</Button>
+          <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponentsLocal()}>Fetch Components - Local</Button>
+        </Box> */}
+        {dashboardGenerated && (
+          <Box>
+            <Box sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              width: "100%",
+            }}>
+            {components &&
+              components.length > 0 &&
+              components.map((component: any) => {
+                const Component = componentMap[component["name"]];
+                if (Component) {
+                  return (
+                    <Card
+                      sx={{ m: 2, p: 10 }}
+                      key={component.id}
+                      data-grid={{ ...component.layout }}
+                    >
+                      <Component />
+                    </Card>
+                  );
+                } else {
+                  console.error(
+                    `Component with name ${component["name"]} not found in componentMap`
+                  );
+                  return null;
+                }
+              })}
+            </Box>
+            <Container maxWidth="sm" sx={{ mt: 3, width: "100%" }}>
+              <Typography variant="body1">
+                Not happy with the dashboard? Request updates and regenerate the
+                dashboard.
+              </Typography>
+              <Box sx={{ mt: 1, width: "100%" }}>
                 {" "}
                 {/* add the Box component and set the flexDirection property */}
                 <TextField
                   sx={{ width: "100%", marginBottom: "10px" }}
                   rows={3}
-                  value={inputValue}
+                  value={userRequest}
+                  onChange={(e) => setUserRequest(e.target.value)}
                   multiline={true}
-                  onChange={(e) => setInputValue(e.target.value)}
                 />
                 <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                   <Button
                     color="parBlue"
                     variant="contained"
+                    onClick={updateDashboard}
                     disabled={loading}
-                    onClick={fetchComponents}
                   >
-                    Next
+                    Update Dashboard
                   </Button>
                 </Box>
               </Box>
-            </div>
-          )}
-          {loading && (
-            <Box sx={{ mt: 10, width: "100%" }}>
-              <Typography variant="body1">{loadingMessage}</Typography>
-              <LinearProgress />
-            </Box>
-          )}
-          {/* <Box sx={{ mt: 3, }}>
-            <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponents()}>Fetch Components - AI</Button>
-            <Button color='parBlue' sx={{ margin: '5px' }} variant="contained" onClick={() => fetchComponentsLocal()}>Fetch Components - Local</Button>
-          </Box> */}
-          {dashboardGenerated && (
-            <div>
-              <Box sx={{ mt: 3, width: "100%" }}>
-                <ResponsiveGridLayout
-                  className="layout"
-                  layouts={{ lg: layout }}
-                  breakpoints={{ lg: 1600 }}
-                  cols={{ lg: 16 }}
-                  rowHeight={30}
+            </Container>
+            <Box sx={{ mt: 20 }}>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
                 >
-                  {components &&
-                    components.length > 0 &&
-                    components.map((component: any) => {
-                      const Component = componentMap[component["name"]];
-                      if (Component) {
-                        return (
-                          <div
-                            key={component.id}
-                            data-grid={{ ...component.layout }}
-                          >
-                            <Component />
-                          </div>
-                        );
-                      } else {
-                        console.error(
-                          `Component with name ${component["name"]} not found in componentMap`
-                        );
-                        return null;
-                      }
-                    })}
-                </ResponsiveGridLayout>
-              </Box>
-              <Box sx={{ mt: 3, width: "100%" }}>
-                <Typography variant="body1">
-                  Not happy with the dashboard? Request updates and regenerate
-                  the dashboard.
-                </Typography>
-                {/* <Box sx={{ mt: 3 }}>
-              <Button color='parBlue' variant="contained" sx={{ margin: '10px' }} onClick={() => updateDashboard()}>Update Dashboard</Button>
-              <TextField label="Any requests for updates?" value={userRequest} onChange={(e) => setUserRequest(e.target.value)} />
-            </Box> */}
-                <Box sx={{ mt: 1, width: "100%" }}>
-                  {" "}
-                  {/* add the Box component and set the flexDirection property */}
-                  <TextField
-                    sx={{ width: "100%", marginBottom: "10px" }}
-                    rows={3}
-                    value={userRequest}
-                    onChange={(e) => setUserRequest(e.target.value)}
-                    multiline={true}
+                  <Typography>Developer Tools</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <JsonView
+                    data={apiResponse}
+                    shouldInitiallyExpand={allExpanded}
                   />
-                  <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                    <Button
-                      color="parBlue"
-                      variant="contained"
-                      onClick={updateDashboard}
-                      disabled={loading}
-                    >
-                      Update Dashboard
-                    </Button>
-                  </Box>
-                </Box>
-              </Box>
-              <Box sx={{ mt: 20 }}>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>Developer Tools</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <JsonView
-                      data={apiResponse}
-                      shouldInitiallyExpand={allExpanded}
-                    />
-                  </AccordionDetails>
-                </Accordion>
-              </Box>
-            </div>
-          )}
-        </Box>
-      </Container>
+                </AccordionDetails>
+              </Accordion>
+            </Box>
+          </Box>
+        )}
+      </Box>
     </ThemeProvider>
   );
 }

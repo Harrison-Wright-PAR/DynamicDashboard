@@ -25,10 +25,10 @@ export default function LiveSalesReport() {
   }, []);
 
   return (
-    <Card sx={{ minWidth: 100 }}>
+    <Card sx={{ width: 300 }}>
       <CardContent>
         <Typography variant="h5" sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-          Sales
+          Live Sales
         </Typography>
         <Typography variant="h3" component="div">
           ${salesTotal}
