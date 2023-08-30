@@ -61,13 +61,8 @@ function StartPage() {
     setApiResponse(response);
   };
 
-  const fetchComponents = async () => {
-    setApiResponse("Calling API...");
-    const response = await api.fetchComponents(inputValue);
-    console.log(response);
-    var components = response["components"];
-    components = components.filter((x: any) => x["name"] in componentMap);
-    components = components.map((x: any, i: number) => {
+  const mapLayouts = (components: Component[], layout: LayoutItem[]) => {
+    return components.map((x: any, i: number) => {
       x["id"] = i;
       var defaultLayout = layout.find((item) => item.i === x.name);
       if (defaultLayout == undefined) {
@@ -79,6 +74,15 @@ function StartPage() {
       console.log(x);
       return x;
     });
+  };
+
+  const fetchComponents = async () => {
+    setApiResponse("Calling API...");
+    const response = await api.fetchComponents(inputValue);
+    console.log(response);
+    var components = response["components"];
+    components = components.filter((x: any) => x["name"] in componentMap);
+    components = mapLayouts(components, layout);
     setComponents(response["components"]);
     setDashboard(response["components"]);
     setApiResponse(response);
@@ -86,6 +90,10 @@ function StartPage() {
   const updateDashboard = async () => {
     var res = await api.updateDashboard(dashboard, userRequest);
     console.log(res);
+    var components = res["components"];
+
+    components = components.filter((x: any) => x["name"] in componentMap);
+    components = mapLayouts(components, layout);
 
     if (res["components"]) {
       setComponents(res["components"]);
