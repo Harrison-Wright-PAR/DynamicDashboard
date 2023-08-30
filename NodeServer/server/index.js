@@ -32,7 +32,7 @@ Given this list of components {componentsAll}, here are some sample dashboards f
  I'm going to ask you something soon, could you provide some key takeaways for yourself that might help later?`
 
 const createActionPrompt = `
-Given these components and sample dashboards, I'm a {role} and my areas of concern are mostly {problemAreas}. Could you suggest a dashboard that would fit my needs best?
+Given these components and sample dashboards, {userInput}. Could you suggest a dashboard that would fit my needs best?
 Please respond using only the components in the following list - {componentsAll}.
 Do not include any explanations, only provide a COMPLETE RFC8259 compliant JSON response following this format without deviation.
 {{"components": [{{
@@ -85,7 +85,7 @@ app.post('/components', async (req, res) => {
     const actionChain = new LLMChain({
         llm,
         prompt: actionPromptTemplate,
-        inputVariables: ["role", "problemAreas", "setupResult", "componentsAll"],
+        inputVariables: ["userInput", "setupResult", "componentsAll"],
         outputKey: "components"
     });
     
@@ -98,7 +98,7 @@ app.post('/components', async (req, res) => {
 
     const overallChain = new SequentialChain({
         chains: [setupChain, actionChain],
-        inputVariables: ["componentsAll", "dashboardsExample", "role", "problemAreas"],
+        inputVariables: ["componentsAll", "dashboardsExample", "userInput"],
         verbose: true,
         outputVariables: ["components"]
     });
@@ -106,8 +106,7 @@ app.post('/components', async (req, res) => {
     const inputValues = {
         componentsAll: JSON.stringify(_components),
         dashboardsExample: JSON.stringify(_dashboards),
-        role: req.body.role,
-        problemAreas: req.body.problemAreas,
+        userInput: req.body.userInput,
     };
 
     const result = await overallChain.call(inputValues);
